@@ -1,14 +1,22 @@
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom"; // React Router Link component for navigation
 
-export default function Navbar() {
+const Navbar = () => {
   return (
-    <nav className="bg-black text-white p-4 flex justify-between items-center">
-      <h1 className="font-bold text-xl">🧢 Wear Your Voice</h1>
-      <div className="space-x-4">
-        <Link to="/" className="hover:underline">Home</Link>
-        <Link to="/shop" className="hover:underline">Shop</Link>
-        <Link to="/contact" className="hover:underline">Contact</Link>
-      </div>
+    <nav className="bg-blue-500 p-4">
+      <ul className="flex space-x-4 justify-center">
+        <li>
+          <Link to="/" className="text-white text-xl">Home</Link>
+        </li>
+        <li>
+          <Link to="/shop" className="text-white text-xl">Shop</Link>
+        </li>
+        <li>
+          <Link to="/contact" className="text-white text-xl">Contact</Link>
+        </li>
+      </ul>
     </nav>
   );
-}
+};
+
+export default Navbar;
