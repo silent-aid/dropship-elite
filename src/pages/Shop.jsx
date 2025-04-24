@@ -1,23 +1,61 @@
-import React from "react";
+import React from 'react'
+
+// Array of products
+const products = [
+  {
+    name: 'Product 1',
+    description: 'This is a description of product 1.',
+    price: '$19.99',
+    imageUrl: 'https://via.placeholder.com/300',
+  },
+  {
+    name: 'Product 2',
+    description: 'This is a description of product 2.',
+    price: '$29.99',
+    imageUrl: 'https://via.placeholder.com/300',
+  },
+  {
+    name: 'Product 3',
+    description: 'This is a description of product 3.',
+    price: '$39.99',
+    imageUrl: 'https://via.placeholder.com/300',
+  },
+  {
+    name: 'Product 4',
+    description: 'This is a description of product 4.',
+    price: '$49.99',
+    imageUrl: 'https://via.placeholder.com/300',
+  },
+  // You can add more products to this array
+]
 
 const Shop = () => {
   return (
-    <div className="min-h-screen bg-gray-100 p-8">
-      <h1 className="text-3xl font-semibold text-center text-blue-600">Shop</h1>
-      <p className="text-center text-gray-700 mt-4">Browse our collection of T-shirts, posters, and digital art!</p>
-      {/* Add your product list here */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-        {/* Sample Product */}
-        <div className="bg-white p-4 shadow-md rounded-md">
-          <img src="https://via.placeholder.com/150" alt="T-shirt" className="w-full h-40 object-cover mb-4" />
-          <h2 className="text-xl font-semibold text-blue-600">Custom T-Shirt</h2>
-          <p className="text-gray-700 mt-2">Price: $20</p>
-          <button className="bg-blue-600 text-white px-4 py-2 mt-4 rounded-md">Add to Cart</button>
-        </div>
-        {/* Repeat similar blocks for more products */}
+    <div className="p-10">
+      <h1 className="text-3xl font-bold text-indigo-700 mb-4">Our Products</h1>
+      
+      {/* Product Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {products.map((product, index) => (
+          <div key={index} className="bg-white p-6 rounded-lg shadow-lg">
+            <img
+              src={product.imageUrl}
+              alt={product.name}
+              className="w-full h-48 object-cover mb-4"
+            />
+            <h2 className="text-2xl font-semibold text-gray-800">{product.name}</h2>
+            <p className="mt-2 text-gray-600">{product.description}</p>
+            <p className="mt-4 text-xl font-bold text-indigo-600">{product.price}</p>
+            
+            {/* Add to Cart Button */}
+            <button className="mt-4 bg-indigo-600 text-white py-2 px-6 rounded-md">
+              Add to Cart
+            </button>
+          </div>
+        ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Shop;
+export default Shop
