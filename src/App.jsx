@@ -6,20 +6,18 @@ import Shop from './pages/Shop';
 import Contact from './pages/Contact';
 import Unlock from './pages/Unlock';
 
-function App() {
+const App = () => {
   return (
     <Router>
-      <div className="font-sans">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/shop" element={<Shop />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/unlock" element={<Unlock />} />
-        </Routes>
-      </div>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/shop" element={<Shop />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/unlock" element={<Unlock />} />
+      </Routes>
     </Router>
   );
-}
+};
 
 export default App;
