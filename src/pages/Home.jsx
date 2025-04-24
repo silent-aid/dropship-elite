@@ -1,8 +1,14 @@
-export default function Home() {
+import React from "react";
+
+const Home = () => {
   return (
-    <div className="p-6">
-      <h1 className="text-3xl font-bold text-center">Welcome to Wear Your Voice</h1>
-      <p className="mt-4 text-center text-gray-600">Express your beliefs through fashion and design.</p>
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50">
+      <h1 className="text-4xl font-bold text-center text-blue-600">Welcome to Wear Your Voice</h1>
+      <p className="text-lg mt-4 text-center text-gray-700">
+        A platform to express your voice through fashion, posters, and digital art.
+      </p>
     </div>
   );
-}
+};
+
+export default Home;
