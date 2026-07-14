@@ -1,12 +1,908 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wear Your Voice</title>
-  </head>
-  <body class="bg-gray-100 text-gray-900">
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Star Fusion 7 Catering | Lunch Box Service</title>
+
+
+<style>
+
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,Arial,sans-serif;
+}
+
+
+html{
+scroll-behavior:smooth;
+}
+
+
+body{
+
+background:#0b0b0b;
+color:white;
+
+}
+
+
+/* ================= LOADER ================= */
+
+
+#loader{
+
+position:fixed;
+width:100%;
+height:100vh;
+background:#050505;
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:9999;
+transition:.8s;
+
+}
+
+
+.loader-box{
+
+text-align:center;
+
+}
+
+
+.loader-box h1{
+
+font-size:55px;
+color:#ffb703;
+animation:glow 2s infinite alternate;
+
+}
+
+
+.loader-box p{
+
+margin-top:10px;
+font-size:18px;
+color:#ddd;
+
+}
+
+
+.loading{
+
+width:260px;
+height:5px;
+background:#333;
+margin:30px auto;
+border-radius:20px;
+overflow:hidden;
+
+}
+
+
+.loading span{
+
+display:block;
+height:100%;
+background:#ffb703;
+animation:load 3s forwards;
+
+}
+
+
+@keyframes load{
+
+from{
+width:0;
+}
+
+to{
+width:100%;
+}
+
+}
+
+
+
+@keyframes glow{
+
+from{
+
+text-shadow:0 0 10px #ffb703;
+
+}
+
+to{
+
+text-shadow:0 0 40px #ffb703;
+
+}
+
+}
+
+
+
+/* ================= NAVBAR ================= */
+
+
+nav{
+
+position:fixed;
+top:0;
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,.7);
+backdrop-filter:blur(10px);
+z-index:1000;
+
+}
+
+
+.logo{
+
+font-size:28px;
+font-weight:bold;
+color:#ffb703;
+
+}
+
+
+nav a{
+
+color:white;
+text-decoration:none;
+margin-left:25px;
+
+}
+
+
+nav a:hover{
+
+color:#ffb703;
+
+}
+
+
+
+/* ================= HERO ================= */
+
+
+.hero{
+
+height:100vh;
+display:flex;
+align-items:center;
+padding:0 8%;
+
+background:
+
+linear-gradient(
+rgba(0,0,0,.7),
+rgba(0,0,0,.8)
+),
+
+url("https://images.unsplash.com/photo-1547592180-85f173990554")
+
+center/cover;
+
+}
+
+
+
+.hero h1{
+
+font-size:60px;
+max-width:700px;
+
+}
+
+
+.hero span{
+
+color:#ffb703;
+
+}
+
+
+.hero p{
+
+font-size:20px;
+margin:20px 0;
+color:#ddd;
+
+}
+
+
+.btn{
+
+background:#ffb703;
+color:black;
+padding:15px 35px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+
+}
+
+
+
+/* ================= COMMON ================= */
+
+
+section{
+
+padding:90px 8%;
+text-align:center;
+
+}
+
+
+h2{
+
+font-size:40px;
+color:#ffb703;
+margin-bottom:30px;
+
+}
+
+
+p{
+
+line-height:1.6;
+
+}
+
+
+
+/* ABOUT */
+
+
+.about p{
+
+max-width:800px;
+margin:auto;
+color:#ccc;
+font-size:18px;
+
+}
+
+
+
+
+/* MENU */
+
+
+.menu-container{
+
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+
+}
+
+
+.card{
+
+background:#151515;
+width:300px;
+border-radius:20px;
+overflow:hidden;
+border:1px solid #333;
+
+}
+
+
+.card img{
+
+width:100%;
+height:200px;
+object-fit:cover;
+
+}
+
+
+.card h3{
+
+color:#ffb703;
+margin:20px;
+
+}
+
+
+.card p{
+
+padding:0 20px;
+color:#ccc;
+
+}
+
+
+.price{
+
+font-size:22px;
+margin:20px;
+
+}
+
+
+
+
+/* SCHOOL */
+
+
+.school{
+
+background:#111;
+
+}
+
+
+.features{
+
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+
+}
+
+
+.feature{
+
+background:#151515;
+padding:30px;
+width:250px;
+border-radius:20px;
+
+}
+
+
+.feature h3{
+
+color:#ffb703;
+
+}
+
+
+
+
+/* REVIEWS */
+
+
+.review-box{
+
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+
+}
+
+
+.review{
+
+background:#151515;
+padding:30px;
+width:300px;
+border-radius:20px;
+
+}
+
+
+
+/* GALLERY */
+
+
+.gallery{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+
+}
+
+
+.gallery img{
+
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:20px;
+
+}
+
+
+
+/* BOOKING */
+
+
+.booking{
+
+background:#111;
+
+}
+
+
+form{
+
+max-width:600px;
+margin:auto;
+background:#151515;
+padding:30px;
+border-radius:20px;
+
+}
+
+
+input,textarea{
+
+width:100%;
+padding:15px;
+margin:10px 0;
+background:#000;
+border:1px solid #444;
+color:white;
+border-radius:10px;
+
+}
+
+
+textarea{
+
+height:120px;
+
+}
+
+
+button{
+
+width:100%;
+padding:15px;
+background:#ffb703;
+border:none;
+border-radius:50px;
+font-size:18px;
+font-weight:bold;
+
+}
+
+
+
+/* WHATSAPP */
+
+
+.whatsapp{
+
+position:fixed;
+bottom:25px;
+right:25px;
+width:60px;
+height:60px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+color:white;
+text-decoration:none;
+
+}
+
+
+
+
+footer{
+
+padding:20px;
+background:#050505;
+text-align:center;
+color:#aaa;
+
+}
+
+
+
+/* MOBILE */
+
+
+@media(max-width:700px){
+
+.hero h1{
+
+font-size:38px;
+
+}
+
+
+nav a{
+
+display:none;
+
+}
+
+
+.loader-box h1{
+
+font-size:38px;
+
+}
+
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+
+<!-- LOADER -->
+
+
+<div id="loader">
+
+<div class="loader-box">
+
+<h1>
+⭐ Star Fusion 7
+</h1>
+
+<p>
+Catering & Lunch Box Service
+</p>
+
+<div class="loading">
+<span></span>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+<nav>
+
+<div class="logo">
+Star Fusion 7
+</div>
+
+
+<div>
+
+<a href="#">Home</a>
+<a href="#menu">Menu</a>
+<a href="#booking">Booking</a>
+<a href="#contact">Contact</a>
+
+</div>
+
+</nav>
+
+
+
+
+<section class="hero">
+
+
+<div>
+
+<h1>
+
+Fresh Lunch Boxes For
+<span>
+Schools & Colleges
+</span>
+
+</h1>
+
+
+<p>
+Healthy meals prepared with care and delivered daily.
+</p>
+
+
+<a class="btn" href="#booking">
+Book Now
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+
+<section class="about">
+
+<h2>
+About Us
+</h2>
+
+<p>
+
+Star Fusion 7 Catering provides fresh lunch boxes for schools, colleges and institutions. Our mission is to deliver tasty, hygienic and affordable meals.
+
+</p>
+
+</section>
+
+
+
+
+
+<section id="menu">
+
+
+<h2>
+Lunch Box Plans
+</h2>
+
+
+<div class="menu-container">
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd">
+
+<h3>
+Regular Box
+</h3>
+
+<p>
+Healthy daily meal.
+</p>
+
+<div class="price">
+₹80+
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1601050690597-df0568f70950">
+
+<h3>
+Premium Box
+</h3>
+
+<p>
+Special student meal.
+</p>
+
+<div class="price">
+₹120+
+</div>
+
+</div>
+
+
+
+</div>
+
+</section>
+
+
+
+
+
+<section class="school">
+
+
+<h2>
+Why Choose Us
+</h2>
+
+
+<div class="features">
+
+
+<div class="feature">
+🍱
+<h3>Fresh Food</h3>
+<p>Prepared daily.</p>
+</div>
+
+
+<div class="feature">
+🚚
+<h3>Fast Delivery</h3>
+<p>On time service.</p>
+</div>
+
+
+<div class="feature">
+🧼
+<h3>Hygiene</h3>
+<p>Clean preparation.</p>
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<section>
+
+
+<h2>
+Food Gallery
+</h2>
+
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c">
+
+<img src="https://images.unsplash.com/photo-1547592180-85f173990554">
+
+<img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd">
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<section class="booking" id="booking">
+
+
+<h2>
+Online Booking
+</h2>
+
+
+<form onsubmit="sendWhatsApp();return false;">
+
+
+<input id="name" placeholder="Your Name" required>
+
+<input id="college" placeholder="School / College Name" required>
+
+<input id="phone" placeholder="Phone Number" required>
+
+<input id="qty" placeholder="Lunch Box Quantity" required>
+
+<textarea id="msg" placeholder="Requirements"></textarea>
+
+
+<button>
+Submit Booking
+</button>
+
+
+</form>
+
+
+</section>
+
+
+
+
+
+<section id="contact">
+
+
+<h2>
+Contact Us
+</h2>
+
+
+<p>
+📍 New Malakpet, Royal Residency
+</p>
+
+
+<p>
+📧 Star.Fusion.7@gmail.com
+</p>
+
+
+</section>
+
+
+
+
+
+<a class="whatsapp" href="#">
+☏
+</a>
+
+
+
+
+<footer>
+
+© 2026 Star Fusion 7 Catering
+
+</footer>
+
+
+
+
+
+
+<script>
+
+
+window.onload=function(){
+
+setTimeout(()=>{
+
+document.getElementById("loader").style.opacity="0";
+
+setTimeout(()=>{
+
+document.getElementById("loader").style.display="none";
+
+},800);
+
+
+},3000);
+
+
+}
+
+
+
+
+function sendWhatsApp(){
+
+
+let text=
+"Star Fusion 7 Booking%0A"+
+"Name: "+name.value+"%0A"+
+"School: "+college.value+"%0A"+
+"Phone: "+phone.value+"%0A"+
+"Quantity: "+qty.value+"%0A"+
+"Message: "+msg.value;
+
+
+window.open(
+"https://wa.me/YOUR_WHATSAPP_NUMBER?text="+text
+);
+
+
+}
+
+
+</script>
+
+
+</body>
+
 </html>
