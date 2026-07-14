@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Star Fusion 7 Catering | Lunch Box Service</title>
-
+<title>Star Fusion 7 Catering</title>
 
 <style>
 
@@ -15,109 +13,78 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
-html{
-scroll-behavior:smooth;
+font-family:'Poppins',Arial,sans-serif;
 }
 
 body{
-background:#0b0b0b;
+background:#070707;
 color:white;
+scroll-behavior:smooth;
 }
 
-
-/* LOADING SCREEN */
 
 #loader{
-
 position:fixed;
-width:100%;
 height:100vh;
+width:100%;
 background:#050505;
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
 z-index:9999;
-transition:.8s;
-
 }
 
 
-.loader-box{
+.loader{
 text-align:center;
 }
 
 
-.loader-box h1{
-
-font-size:50px;
+.loader h1{
+font-size:55px;
 color:#ffb703;
 animation:glow 2s infinite alternate;
-
 }
 
 
-.loader-box p{
-
-margin-top:10px;
-
+.loader p{
+margin:15px;
 }
 
 
-.loading{
-
+.bar{
 width:250px;
 height:5px;
 background:#333;
-margin:30px auto;
-border-radius:20px;
-
+overflow:hidden;
+margin:auto;
 }
 
 
-.loading span{
-
+.bar span{
 display:block;
 height:100%;
 background:#ffb703;
-animation:load 3s forwards;
-
+animation:loading 3s forwards;
 }
 
 
-@keyframes load{
-
-from{
-width:0;
-}
-
-to{
-width:100%;
-}
-
+@keyframes loading{
+from{width:0}
+to{width:100%}
 }
 
 
 @keyframes glow{
-
-from{
-text-shadow:0 0 10px #ffb703;
-}
-
-to{
-text-shadow:0 0 40px #ffb703;
-}
-
+from{text-shadow:0 0 10px #ffb703}
+to{text-shadow:0 0 40px #ffb703}
 }
 
 
 
-/* NAVBAR */
+/* NAV */
 
 nav{
-
 position:fixed;
 top:0;
 width:100%;
@@ -125,29 +92,23 @@ padding:20px 8%;
 display:flex;
 justify-content:space-between;
 background:rgba(0,0,0,.7);
-backdrop-filter:blur(10px);
+backdrop-filter:blur(15px);
 z-index:1000;
-
 }
 
 
 .logo{
-
 font-size:28px;
 font-weight:bold;
 color:#ffb703;
-
 }
 
 
 nav a{
-
 color:white;
 text-decoration:none;
 margin-left:20px;
-
 }
-
 
 
 /* HERO */
@@ -160,48 +121,39 @@ align-items:center;
 padding:0 8%;
 
 background:
-
 linear-gradient(
-rgba(0,0,0,.7),
-rgba(0,0,0,.8)
+rgba(0,0,0,.65),
+rgba(0,0,0,.9)
 ),
-
 url("https://images.unsplash.com/photo-1547592180-85f173990554")
-
 center/cover;
 
 }
 
 
 .hero h1{
-
-font-size:55px;
-max-width:700px;
-
+font-size:60px;
+max-width:750px;
 }
 
 
 .hero span{
-
 color:#ffb703;
-
 }
 
 
 .hero p{
-
 font-size:20px;
-margin:20px 0;
+margin:25px 0;
 color:#ddd;
-
 }
 
 
 .btn{
 
 background:#ffb703;
+color:#000;
 padding:15px 35px;
-color:black;
 border-radius:50px;
 text-decoration:none;
 font-weight:bold;
@@ -209,81 +161,69 @@ font-weight:bold;
 }
 
 
-/* COMMON */
+
+/* SECTIONS */
 
 section{
-
 padding:90px 8%;
 text-align:center;
-
 }
 
 
 h2{
-
-color:#ffb703;
 font-size:40px;
-margin-bottom:30px;
-
+color:#ffb703;
+margin-bottom:35px;
 }
-
 
 
 /* ABOUT */
 
-
 .about p{
-
 max-width:800px;
 margin:auto;
 color:#ccc;
 font-size:18px;
-
 }
 
 
 
+/* MENU TABLE */
 
-/* WEEKLY MENU */
+.menu-table{
 
-
-.week-container{
-
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-
-}
-
-
-.day-card{
-
-background:#151515;
-border:1px solid #333;
-padding:25px;
-width:220px;
+width:100%;
+border-collapse:collapse;
+background:#111;
 border-radius:20px;
+overflow:hidden;
 
 }
 
 
-.day-card h3{
+.menu-table th{
 
-color:#ffb703;
-margin-bottom:15px;
-
-}
-
-
-.day-card p{
-
-color:#ddd;
-margin:10px;
+background:#ffb703;
+color:#000;
+padding:18px;
 
 }
 
 
+.menu-table td{
+
+padding:18px;
+border-bottom:1px solid #333;
+
+}
+
+
+
+.menu-table tr:hover{
+
+background:#181818;
+
+}
 
 
 /* BOOKING */
@@ -298,132 +238,59 @@ background:#111;
 
 form{
 
-max-width:600px;
+max-width:650px;
 margin:auto;
 background:#151515;
-padding:30px;
-border-radius:20px;
+padding:35px;
+border-radius:25px;
 
 }
 
 
 
-input,
-select,
-textarea{
+input,select,textarea{
 
 width:100%;
 padding:15px;
 margin:10px 0;
-background:#000;
-color:white;
+background:#050505;
 border:1px solid #444;
-border-radius:10px;
+border-radius:12px;
+color:white;
 
 }
 
 
 textarea{
-
 height:120px;
-
 }
+
 
 
 button{
 
 width:100%;
-padding:15px;
+padding:16px;
 background:#ffb703;
-border:none;
+border:0;
 border-radius:50px;
-font-weight:bold;
 font-size:18px;
+font-weight:bold;
+cursor:pointer;
 
 }
 
 
-
-/* GALLERY */
-
-
-.gallery{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-
-}
-
-
-.gallery img{
-
-width:100%;
-height:250px;
-object-fit:cover;
-border-radius:20px;
-
-}
-
-
-
-/* CONTACT */
-
-
-.contact p{
-
-margin:15px;
-color:#ddd;
-
-}
-
-
-/* WHATSAPP */
-
-.whatsapp{
-
-position:fixed;
-right:25px;
-bottom:25px;
-background:#25D366;
-width:60px;
-height:60px;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:30px;
-color:white;
-text-decoration:none;
-
-}
-
-
-
-footer{
-
-background:#050505;
-padding:20px;
-text-align:center;
-color:#aaa;
-
-}
-
-
-
+/* MOBILE */
 
 @media(max-width:700px){
 
 .hero h1{
-
-font-size:35px;
-
+font-size:38px;
 }
 
 nav a{
-
 display:none;
-
 }
 
 }
@@ -432,37 +299,24 @@ display:none;
 
 </head>
 
-
-
 <body>
-
-
-
-<!-- LOADER -->
 
 
 <div id="loader">
 
-<div class="loader-box">
+<div class="loader">
 
-<h1>
-⭐ Star Fusion 7
-</h1>
+<h1>⭐ Star Fusion 7</h1>
 
-<p>
-Catering & Lunch Box Service
-</p>
+<p>Catering & Lunch Box Service</p>
 
-<div class="loading">
+<div class="bar">
 <span></span>
 </div>
 
-
 </div>
 
 </div>
-
-
 
 
 
@@ -478,7 +332,6 @@ Star Fusion 7
 <a href="#">Home</a>
 <a href="#menu">Menu</a>
 <a href="#booking">Order</a>
-<a href="#contact">Contact</a>
 
 </div>
 
@@ -486,26 +339,20 @@ Star Fusion 7
 
 
 
-
-
 <section class="hero">
-
 
 <div>
 
-
 <h1>
-
-Fresh Lunch Boxes For
+Fresh Lunch Boxes For 
 <span>
 Schools & Colleges
 </span>
-
 </h1>
 
 
 <p>
-Healthy, hygienic and affordable meals delivered daily.
+Healthy meals. Hygienic packing. Daily delivery.
 </p>
 
 
@@ -521,10 +368,7 @@ Pre Order Now
 
 
 
-
-
 <section class="about">
-
 
 <h2>
 About Star Fusion 7
@@ -532,15 +376,11 @@ About Star Fusion 7
 
 
 <p>
-
-Star Fusion 7 Catering provides fixed weekly lunch box menus for schools, colleges and institutions. Customers can check the menu and pre-order according to their requirements.
-
+Star Fusion 7 Catering provides premium lunch box services for schools, colleges and institutions with fixed weekly menus and reliable delivery.
 </p>
 
 
 </section>
-
-
 
 
 
@@ -548,294 +388,63 @@ Star Fusion 7 Catering provides fixed weekly lunch box menus for schools, colleg
 
 <section id="menu">
 
-
 <h2>
 Weekly Lunch Menu
 </h2>
 
 
-<p>
-Menu is fixed weekly. Pre-order before delivery date.
-</p>
+<table class="menu-table">
 
 
-
-<div class="week-container">
-
-
-<div class="day-card">
-<h3>Monday</h3>
-<p>🍚 Chicken Biryani</p>
-<p>🥗 Raita</p>
-</div>
+<tr>
+<th>Day</th>
+<th>Main Dish</th>
+<th>Included</th>
+</tr>
 
 
-<div class="day-card">
-<h3>Tuesday</h3>
-<p>🍛 Veg Rice</p>
-<p>🥘 Curry</p>
-</div>
+<tr>
+<td>Monday</td>
+<td>Chicken Biryani</td>
+<td>Raita + Salad</td>
+</tr>
 
 
-<div class="day-card">
-<h3>Wednesday</h3>
-<p>🍚 Chicken Rice</p>
-<p>🥤 Drink</p>
-</div>
+<tr>
+<td>Tuesday</td>
+<td>Veg Meal</td>
+<td>Curry + Rice</td>
+</tr>
 
 
-<div class="day-card">
-<h3>Thursday</h3>
-<p>🍗 Chicken Curry</p>
-<p>🍚 Rice</p>
-</div>
+<tr>
+<td>Wednesday</td>
+<td>Chicken Rice</td>
+<td>Drink</td>
+</tr>
 
 
-<div class="day-card">
-<h3>Friday</h3>
-<p>⭐ Special Meal</p>
-<p>🍮 Dessert</p>
-</div>
+<tr>
+<td>Thursday</td>
+<td>Chicken Curry</td>
+<td>Rice + Salad</td>
+</tr>
 
 
-<div class="day-card">
-<h3>Saturday</h3>
-<p>🍱 Premium Box</p>
-<p>Special Menu</p>
-</div>
+<tr>
+<td>Friday</td>
+<td>Special Friday Box</td>
+<td>Dessert</td>
+</tr>
 
 
-</div>
+<tr>
+<td>Saturday</td>
+<td>Premium Box</td>
+<td>Special Menu</td>
+</tr>
 
 
-</section>
-
-
-
-
-
-
-
-<section class="booking" id="booking">
-
-
-<h2>
-Lunch Box Pre Order
-</h2>
-
-
-<form onsubmit="sendWhatsApp();return false;">
-
-
-<input id="name" placeholder="Your Name" required>
-
-
-<input id="college" placeholder="School / College Name" required>
-
-
-<input id="phone" placeholder="Phone Number" required>
-
-
-
-<select id="day" required>
-
-
-<option>
-Select Menu Day
-</option>
-
-<option>
-Monday - Chicken Biryani
-</option>
-
-<option>
-Tuesday - Veg Rice
-</option>
-
-<option>
-Wednesday - Chicken Rice
-</option>
-
-<option>
-Thursday - Chicken Curry Rice
-</option>
-
-<option>
-Friday - Special Meal
-</option>
-
-<option>
-Saturday - Premium Box
-</option>
-
-
-</select>
-
-
-
-<input id="qty" placeholder="Lunch Box Quantity" required>
-
-
-<textarea id="msg" placeholder="Extra Requirements"></textarea>
-
-
-<button>
-Place Pre Order
-</button>
-
-
-</form>
-
+</table>
 
 </section>
-
-
-
-
-
-
-
-
-<section>
-
-
-<h2>
-Food Gallery
-</h2>
-
-
-<div class="gallery">
-
-
-<img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c">
-
-
-<img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd">
-
-
-<img src="https://images.unsplash.com/photo-1547592180-85f173990554">
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-
-<section class="contact" id="contact">
-
-
-<h2>
-Contact Us
-</h2>
-
-
-<p>
-📍 New Malakpet, Royal Residency
-</p>
-
-
-<p>
-📧 Star.Fusion.7@gmail.com
-</p>
-
-
-</section>
-
-
-
-
-
-
-<a class="whatsapp" href="#">
-☏
-</a>
-
-
-
-
-
-<footer>
-
-© 2026 Star Fusion 7 Catering
-
-</footer>
-
-
-
-
-
-
-
-<script>
-
-
-window.onload=function(){
-
-
-setTimeout(function(){
-
-
-document.getElementById("loader").style.opacity="0";
-
-
-setTimeout(function(){
-
-document.getElementById("loader").style.display="none";
-
-},800);
-
-
-},3000);
-
-
-}
-
-
-
-
-function sendWhatsApp(){
-
-
-let text=
-
-"🍱 Star Fusion 7 Pre Order%0A%0A"+
-
-"Name: "+name.value+"%0A"+
-
-"School/College: "+college.value+"%0A"+
-
-"Phone: "+phone.value+"%0A"+
-
-"Menu: "+day.value+"%0A"+
-
-"Quantity: "+qty.value+"%0A"+
-
-"Requirements: "+msg.value;
-
-
-
-window.open(
-
-"https://wa.me/YOUR_WHATSAPP_NUMBER?text="+text
-
-);
-
-
-}
-
-
-
-</script>
-
-
-
-</body>
-
-</html>
