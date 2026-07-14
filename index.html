@@ -11,30 +11,24 @@
 
 <style>
 
-
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Poppins,Arial,sans-serif;
+font-family:Arial,sans-serif;
 }
-
 
 html{
 scroll-behavior:smooth;
 }
 
-
 body{
-
 background:#0b0b0b;
 color:white;
-
 }
 
 
-/* ================= LOADER ================= */
-
+/* LOADING SCREEN */
 
 #loader{
 
@@ -52,15 +46,13 @@ transition:.8s;
 
 
 .loader-box{
-
 text-align:center;
-
 }
 
 
 .loader-box h1{
 
-font-size:55px;
+font-size:50px;
 color:#ffb703;
 animation:glow 2s infinite alternate;
 
@@ -70,20 +62,17 @@ animation:glow 2s infinite alternate;
 .loader-box p{
 
 margin-top:10px;
-font-size:18px;
-color:#ddd;
 
 }
 
 
 .loading{
 
-width:260px;
+width:250px;
 height:5px;
 background:#333;
 margin:30px auto;
 border-radius:20px;
-overflow:hidden;
 
 }
 
@@ -111,27 +100,21 @@ width:100%;
 }
 
 
-
 @keyframes glow{
 
 from{
-
 text-shadow:0 0 10px #ffb703;
-
 }
 
 to{
-
 text-shadow:0 0 40px #ffb703;
-
 }
 
 }
 
 
 
-/* ================= NAVBAR ================= */
-
+/* NAVBAR */
 
 nav{
 
@@ -141,7 +124,6 @@ width:100%;
 padding:20px 8%;
 display:flex;
 justify-content:space-between;
-align-items:center;
 background:rgba(0,0,0,.7);
 backdrop-filter:blur(10px);
 z-index:1000;
@@ -162,21 +144,13 @@ nav a{
 
 color:white;
 text-decoration:none;
-margin-left:25px;
-
-}
-
-
-nav a:hover{
-
-color:#ffb703;
+margin-left:20px;
 
 }
 
 
 
-/* ================= HERO ================= */
-
+/* HERO */
 
 .hero{
 
@@ -199,10 +173,9 @@ center/cover;
 }
 
 
-
 .hero h1{
 
-font-size:60px;
+font-size:55px;
 max-width:700px;
 
 }
@@ -227,8 +200,8 @@ color:#ddd;
 .btn{
 
 background:#ffb703;
-color:black;
 padding:15px 35px;
+color:black;
 border-radius:50px;
 text-decoration:none;
 font-weight:bold;
@@ -236,9 +209,7 @@ font-weight:bold;
 }
 
 
-
-/* ================= COMMON ================= */
-
+/* COMMON */
 
 section{
 
@@ -250,16 +221,9 @@ text-align:center;
 
 h2{
 
-font-size:40px;
 color:#ffb703;
+font-size:40px;
 margin-bottom:30px;
-
-}
-
-
-p{
-
-line-height:1.6;
 
 }
 
@@ -280,123 +244,101 @@ font-size:18px;
 
 
 
-/* MENU */
+/* WEEKLY MENU */
 
 
-.menu-container{
+.week-container{
 
 display:flex;
 justify-content:center;
-gap:30px;
+gap:20px;
 flex-wrap:wrap;
 
 }
 
 
-.card{
+.day-card{
 
 background:#151515;
-width:300px;
-border-radius:20px;
-overflow:hidden;
 border:1px solid #333;
+padding:25px;
+width:220px;
+border-radius:20px;
 
 }
 
 
-.card img{
-
-width:100%;
-height:200px;
-object-fit:cover;
-
-}
-
-
-.card h3{
+.day-card h3{
 
 color:#ffb703;
-margin:20px;
+margin-bottom:15px;
 
 }
 
 
-.card p{
+.day-card p{
 
-padding:0 20px;
-color:#ccc;
-
-}
-
-
-.price{
-
-font-size:22px;
-margin:20px;
+color:#ddd;
+margin:10px;
 
 }
 
 
 
 
-/* SCHOOL */
+/* BOOKING */
 
 
-.school{
+.booking{
 
 background:#111;
 
 }
 
 
-.features{
+form{
 
-display:flex;
-justify-content:center;
-gap:25px;
-flex-wrap:wrap;
-
-}
-
-
-.feature{
-
+max-width:600px;
+margin:auto;
 background:#151515;
 padding:30px;
-width:250px;
 border-radius:20px;
 
 }
 
 
-.feature h3{
 
-color:#ffb703;
+input,
+select,
+textarea{
 
-}
-
-
-
-
-/* REVIEWS */
-
-
-.review-box{
-
-display:flex;
-justify-content:center;
-gap:25px;
-flex-wrap:wrap;
+width:100%;
+padding:15px;
+margin:10px 0;
+background:#000;
+color:white;
+border:1px solid #444;
+border-radius:10px;
 
 }
 
 
-.review{
+textarea{
 
-background:#151515;
-padding:30px;
-width:300px;
-border-radius:20px;
+height:120px;
+
+}
+
+
+button{
+
+width:100%;
+padding:15px;
+background:#ffb703;
+border:none;
+border-radius:50px;
+font-weight:bold;
+font-size:18px;
 
 }
 
@@ -425,76 +367,31 @@ border-radius:20px;
 
 
 
-/* BOOKING */
+/* CONTACT */
 
 
-.booking{
+.contact p{
 
-background:#111;
-
-}
-
-
-form{
-
-max-width:600px;
-margin:auto;
-background:#151515;
-padding:30px;
-border-radius:20px;
+margin:15px;
+color:#ddd;
 
 }
-
-
-input,textarea{
-
-width:100%;
-padding:15px;
-margin:10px 0;
-background:#000;
-border:1px solid #444;
-color:white;
-border-radius:10px;
-
-}
-
-
-textarea{
-
-height:120px;
-
-}
-
-
-button{
-
-width:100%;
-padding:15px;
-background:#ffb703;
-border:none;
-border-radius:50px;
-font-size:18px;
-font-weight:bold;
-
-}
-
 
 
 /* WHATSAPP */
 
-
 .whatsapp{
 
 position:fixed;
-bottom:25px;
 right:25px;
+bottom:25px;
+background:#25D366;
 width:60px;
 height:60px;
-background:#25D366;
 border-radius:50%;
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
 font-size:30px;
 color:white;
 text-decoration:none;
@@ -503,11 +400,10 @@ text-decoration:none;
 
 
 
-
 footer{
 
-padding:20px;
 background:#050505;
+padding:20px;
 text-align:center;
 color:#aaa;
 
@@ -515,17 +411,14 @@ color:#aaa;
 
 
 
-/* MOBILE */
-
 
 @media(max-width:700px){
 
 .hero h1{
 
-font-size:38px;
+font-size:35px;
 
 }
-
 
 nav a{
 
@@ -533,20 +426,12 @@ display:none;
 
 }
 
-
-.loader-box h1{
-
-font-size:38px;
-
 }
-
-
-}
-
 
 </style>
 
 </head>
+
 
 
 <body>
@@ -572,9 +457,11 @@ Catering & Lunch Box Service
 <span></span>
 </div>
 
+
 </div>
 
 </div>
+
 
 
 
@@ -590,7 +477,7 @@ Star Fusion 7
 
 <a href="#">Home</a>
 <a href="#menu">Menu</a>
-<a href="#booking">Booking</a>
+<a href="#booking">Order</a>
 <a href="#contact">Contact</a>
 
 </div>
@@ -600,10 +487,12 @@ Star Fusion 7
 
 
 
+
 <section class="hero">
 
 
 <div>
+
 
 <h1>
 
@@ -616,36 +505,42 @@ Schools & Colleges
 
 
 <p>
-Healthy meals prepared with care and delivered daily.
+Healthy, hygienic and affordable meals delivered daily.
 </p>
 
 
 <a class="btn" href="#booking">
-Book Now
+Pre Order Now
 </a>
 
 
 </div>
 
-
 </section>
+
+
 
 
 
 
 <section class="about">
 
+
 <h2>
-About Us
+About Star Fusion 7
 </h2>
+
 
 <p>
 
-Star Fusion 7 Catering provides fresh lunch boxes for schools, colleges and institutions. Our mission is to deliver tasty, hygienic and affordable meals.
+Star Fusion 7 Catering provides fixed weekly lunch box menus for schools, colleges and institutions. Customers can check the menu and pre-order according to their requirements.
 
 </p>
 
+
 </section>
+
+
 
 
 
@@ -655,54 +550,63 @@ Star Fusion 7 Catering provides fresh lunch boxes for schools, colleges and inst
 
 
 <h2>
-Lunch Box Plans
+Weekly Lunch Menu
 </h2>
 
 
-<div class="menu-container">
-
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd">
-
-<h3>
-Regular Box
-</h3>
-
 <p>
-Healthy daily meal.
+Menu is fixed weekly. Pre-order before delivery date.
 </p>
 
-<div class="price">
-₹80+
-</div>
-
-</div>
 
 
+<div class="week-container">
 
-<div class="card">
 
-<img src="https://images.unsplash.com/photo-1601050690597-df0568f70950">
-
-<h3>
-Premium Box
-</h3>
-
-<p>
-Special student meal.
-</p>
-
-<div class="price">
-₹120+
-</div>
-
+<div class="day-card">
+<h3>Monday</h3>
+<p>🍚 Chicken Biryani</p>
+<p>🥗 Raita</p>
 </div>
 
 
+<div class="day-card">
+<h3>Tuesday</h3>
+<p>🍛 Veg Rice</p>
+<p>🥘 Curry</p>
+</div>
+
+
+<div class="day-card">
+<h3>Wednesday</h3>
+<p>🍚 Chicken Rice</p>
+<p>🥤 Drink</p>
+</div>
+
+
+<div class="day-card">
+<h3>Thursday</h3>
+<p>🍗 Chicken Curry</p>
+<p>🍚 Rice</p>
+</div>
+
+
+<div class="day-card">
+<h3>Friday</h3>
+<p>⭐ Special Meal</p>
+<p>🍮 Dessert</p>
+</div>
+
+
+<div class="day-card">
+<h3>Saturday</h3>
+<p>🍱 Premium Box</p>
+<p>Special Menu</p>
+</div>
+
 
 </div>
+
 
 </section>
 
@@ -710,42 +614,82 @@ Special student meal.
 
 
 
-<section class="school">
+
+
+<section class="booking" id="booking">
 
 
 <h2>
-Why Choose Us
+Lunch Box Pre Order
 </h2>
 
 
-<div class="features">
+<form onsubmit="sendWhatsApp();return false;">
 
 
-<div class="feature">
-🍱
-<h3>Fresh Food</h3>
-<p>Prepared daily.</p>
-</div>
+<input id="name" placeholder="Your Name" required>
 
 
-<div class="feature">
-🚚
-<h3>Fast Delivery</h3>
-<p>On time service.</p>
-</div>
+<input id="college" placeholder="School / College Name" required>
 
 
-<div class="feature">
-🧼
-<h3>Hygiene</h3>
-<p>Clean preparation.</p>
-</div>
+<input id="phone" placeholder="Phone Number" required>
 
 
-</div>
+
+<select id="day" required>
+
+
+<option>
+Select Menu Day
+</option>
+
+<option>
+Monday - Chicken Biryani
+</option>
+
+<option>
+Tuesday - Veg Rice
+</option>
+
+<option>
+Wednesday - Chicken Rice
+</option>
+
+<option>
+Thursday - Chicken Curry Rice
+</option>
+
+<option>
+Friday - Special Meal
+</option>
+
+<option>
+Saturday - Premium Box
+</option>
+
+
+</select>
+
+
+
+<input id="qty" placeholder="Lunch Box Quantity" required>
+
+
+<textarea id="msg" placeholder="Extra Requirements"></textarea>
+
+
+<button>
+Place Pre Order
+</button>
+
+
+</form>
 
 
 </section>
+
+
 
 
 
@@ -762,11 +706,15 @@ Food Gallery
 
 <div class="gallery">
 
+
 <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c">
+
+
+<img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd">
+
 
 <img src="https://images.unsplash.com/photo-1547592180-85f173990554">
 
-<img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd">
 
 </div>
 
@@ -778,43 +726,9 @@ Food Gallery
 
 
 
-<section class="booking" id="booking">
 
 
-<h2>
-Online Booking
-</h2>
-
-
-<form onsubmit="sendWhatsApp();return false;">
-
-
-<input id="name" placeholder="Your Name" required>
-
-<input id="college" placeholder="School / College Name" required>
-
-<input id="phone" placeholder="Phone Number" required>
-
-<input id="qty" placeholder="Lunch Box Quantity" required>
-
-<textarea id="msg" placeholder="Requirements"></textarea>
-
-
-<button>
-Submit Booking
-</button>
-
-
-</form>
-
-
-</section>
-
-
-
-
-
-<section id="contact">
+<section class="contact" id="contact">
 
 
 <h2>
@@ -838,9 +752,11 @@ Contact Us
 
 
 
+
 <a class="whatsapp" href="#">
 ☏
 </a>
+
 
 
 
@@ -856,16 +772,20 @@ Contact Us
 
 
 
+
 <script>
 
 
 window.onload=function(){
 
-setTimeout(()=>{
+
+setTimeout(function(){
+
 
 document.getElementById("loader").style.opacity="0";
 
-setTimeout(()=>{
+
+setTimeout(function(){
 
 document.getElementById("loader").style.display="none";
 
@@ -884,23 +804,36 @@ function sendWhatsApp(){
 
 
 let text=
-"Star Fusion 7 Booking%0A"+
+
+"🍱 Star Fusion 7 Pre Order%0A%0A"+
+
 "Name: "+name.value+"%0A"+
-"School: "+college.value+"%0A"+
+
+"School/College: "+college.value+"%0A"+
+
 "Phone: "+phone.value+"%0A"+
+
+"Menu: "+day.value+"%0A"+
+
 "Quantity: "+qty.value+"%0A"+
-"Message: "+msg.value;
+
+"Requirements: "+msg.value;
+
 
 
 window.open(
+
 "https://wa.me/YOUR_WHATSAPP_NUMBER?text="+text
+
 );
 
 
 }
 
 
+
 </script>
+
 
 
 </body>
