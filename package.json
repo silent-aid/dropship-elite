@@ -1,21 +1,861 @@
-{
-  "name": "wear-your-voice",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.22.3"
-  },
-  "devDependencies": {
-    "vite": "^5.2.0",
-    "tailwindcss": "^3.4.4",
-    "postcss": "^8.4.38",
-    "autoprefixer": "^10.4.19"
-  }
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Star Fusion 7 | Monthly Subscription Plans</title>
+
+
+<style>
+
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
 }
+
+
+body{
+
+background:#0b0b0b;
+color:white;
+
+}
+
+
+html{
+scroll-behavior:smooth;
+}
+
+
+
+/* LOADER */
+
+
+#loader{
+
+position:fixed;
+height:100vh;
+width:100%;
+background:#050505;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+transition:.8s;
+
+}
+
+
+.loader-box{
+
+text-align:center;
+
+}
+
+
+.loader-box h1{
+
+font-size:50px;
+color:#ffb703;
+animation:glow 2s infinite alternate;
+
+}
+
+
+.loader-box p{
+
+margin-top:10px;
+
+}
+
+
+.bar{
+
+height:5px;
+width:250px;
+background:#333;
+margin:30px auto;
+border-radius:20px;
+overflow:hidden;
+
+}
+
+
+.bar span{
+
+display:block;
+height:100%;
+width:0;
+background:#ffb703;
+animation:loading 3s forwards;
+
+}
+
+
+
+@keyframes loading{
+
+to{
+width:100%;
+}
+
+}
+
+
+
+@keyframes glow{
+
+from{
+
+text-shadow:0 0 10px #ffb703;
+
+}
+
+to{
+
+text-shadow:0 0 40px #ffb703;
+
+}
+
+}
+
+
+
+
+
+/* NAVBAR */
+
+
+nav{
+
+position:fixed;
+top:0;
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,.7);
+backdrop-filter:blur(10px);
+z-index:1000;
+
+}
+
+
+.logo{
+
+font-size:28px;
+font-weight:bold;
+color:#ffb703;
+
+}
+
+
+nav a{
+
+color:white;
+text-decoration:none;
+margin-left:20px;
+
+}
+
+
+
+nav a:hover{
+
+color:#ffb703;
+
+}
+
+
+
+
+/* HERO */
+
+
+.hero{
+
+padding:160px 8% 80px;
+text-align:center;
+
+background:
+
+linear-gradient(
+rgba(0,0,0,.7),
+rgba(0,0,0,.9)
+),
+
+url("https://images.unsplash.com/photo-1547592180-85f173990554")
+
+center/cover;
+
+}
+
+
+.hero h1{
+
+font-size:55px;
+
+}
+
+
+.hero span{
+
+color:#ffb703;
+
+}
+
+
+.hero p{
+
+margin:20px;
+font-size:20px;
+color:#ddd;
+
+}
+
+
+
+
+
+/* PLANS */
+
+
+.plans{
+
+padding:80px 8%;
+text-align:center;
+
+}
+
+
+.plans h2{
+
+font-size:40px;
+color:#ffb703;
+margin-bottom:40px;
+
+}
+
+
+.plan-container{
+
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+
+}
+
+
+
+.plan{
+
+background:#151515;
+border:1px solid #333;
+width:320px;
+padding:35px;
+border-radius:25px;
+transition:.3s;
+
+}
+
+
+
+.plan:hover{
+
+transform:translateY(-10px);
+border-color:#ffb703;
+
+}
+
+
+
+.plan h3{
+
+font-size:28px;
+color:#ffb703;
+
+}
+
+
+
+.price{
+
+font-size:35px;
+font-weight:bold;
+margin:25px 0;
+
+}
+
+
+
+.plan ul{
+
+list-style:none;
+color:#ddd;
+line-height:2;
+
+}
+
+
+
+.plan button{
+
+margin-top:25px;
+padding:15px 30px;
+border:none;
+border-radius:50px;
+background:#ffb703;
+font-weight:bold;
+cursor:pointer;
+
+}
+
+
+
+
+
+/* BENEFITS */
+
+
+.benefits{
+
+background:#111;
+padding:80px 8%;
+text-align:center;
+
+}
+
+
+.benefit-box{
+
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+
+}
+
+
+
+.benefit{
+
+background:#151515;
+padding:25px;
+width:230px;
+border-radius:20px;
+
+}
+
+
+
+.benefit h3{
+
+color:#ffb703;
+margin-bottom:10px;
+
+}
+
+
+
+
+/* FAQ */
+
+
+.faq{
+
+padding:80px 8%;
+text-align:center;
+
+}
+
+
+.faq div{
+
+background:#151515;
+padding:20px;
+margin:15px auto;
+max-width:700px;
+border-radius:15px;
+
+}
+
+
+
+footer{
+
+background:#050505;
+padding:20px;
+text-align:center;
+color:#aaa;
+
+}
+
+
+
+
+.whatsapp{
+
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:30px;
+color:white;
+text-decoration:none;
+
+}
+
+
+
+
+@media(max-width:700px){
+
+
+.hero h1{
+
+font-size:35px;
+
+}
+
+
+nav a{
+
+display:none;
+
+}
+
+
+}
+
+
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+
+
+<div id="loader">
+
+<div class="loader-box">
+
+<h1>
+⭐ Star Fusion 7
+</h1>
+
+<p>
+Monthly Lunch Subscription
+</p>
+
+
+<div class="bar">
+<span></span>
+</div>
+
+
+</div>
+
+</div>
+
+
+
+
+
+<nav>
+
+
+<div class="logo">
+Star Fusion 7
+</div>
+
+
+<div>
+
+<a href="index.html">
+Home
+</a>
+
+
+<a href="#plans">
+Plans
+</a>
+
+
+<a href="#contact">
+Contact
+</a>
+
+
+</div>
+
+
+</nav>
+
+
+
+
+
+<section class="hero">
+
+
+<h1>
+
+Monthly
+<span>
+Lunch Subscription
+</span>
+
+</h1>
+
+
+<p>
+
+Fresh meals delivered according to our weekly menu schedule.
+
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+
+<section class="plans" id="plans">
+
+
+<h2>
+Choose Your Plan
+</h2>
+
+
+
+<div class="plan-container">
+
+
+
+
+
+<div class="plan">
+
+
+<h3>
+🥉 Student Basic
+</h3>
+
+
+<div class="price">
+₹2000
+</div>
+
+
+<ul>
+
+<li>✔ 20 Lunch Boxes</li>
+
+<li>✔ Fixed Weekly Menu</li>
+
+<li>✔ Standard Packaging</li>
+
+<li>✔ Fresh Daily Meals</li>
+
+</ul>
+
+
+<button onclick="order('Student Basic ₹2000/month')">
+Subscribe Now
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="plan">
+
+
+<h3>
+🥈 Student Premium
+</h3>
+
+
+<div class="price">
+₹3000
+</div>
+
+
+<ul>
+
+<li>✔ 26 Lunch Boxes</li>
+
+<li>✔ Premium Meals</li>
+
+<li>✔ Friday Special Meal</li>
+
+<li>✔ Priority Service</li>
+
+</ul>
+
+
+<button onclick="order('Student Premium ₹3000/month')">
+Subscribe Now
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="plan">
+
+
+<h3>
+🏫 School / College
+</h3>
+
+
+<div class="price">
+₹5000+
+</div>
+
+
+<ul>
+
+<li>✔ Bulk Orders</li>
+
+<li>✔ Custom Menu</li>
+
+<li>✔ Dedicated Delivery</li>
+
+<li>✔ Monthly Billing</li>
+
+</ul>
+
+
+<button onclick="order('School College Plan')">
+Enquire Now
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<section class="benefits">
+
+
+<h2>
+Why Subscribe?
+</h2>
+
+
+
+<div class="benefit-box">
+
+
+<div class="benefit">
+
+<h3>
+🍱 Fixed Menu
+</h3>
+
+<p>
+Know your meal before ordering.
+</p>
+
+</div>
+
+
+
+<div class="benefit">
+
+<h3>
+🚚 Regular Delivery
+</h3>
+
+<p>
+Meals delivered on schedule.
+</p>
+
+</div>
+
+
+
+<div class="benefit">
+
+<h3>
+🧼 Hygiene
+</h3>
+
+<p>
+Clean and safe preparation.
+</p>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<section class="faq" id="contact">
+
+
+<h2>
+FAQ
+</h2>
+
+
+<div>
+<b>Can I change my plan?</b>
+<br>
+Yes, contact our team.
+</div>
+
+
+<div>
+<b>Is menu fixed weekly?</b>
+<br>
+Yes, menu is planned weekly.
+</div>
+
+
+<div>
+<b>Do you provide school bulk orders?</b>
+<br>
+Yes, we provide institution plans.
+</div>
+
+
+</section>
+
+
+
+
+
+
+<a class="whatsapp" href="#" >
+☏
+</a>
+
+
+
+
+
+<footer>
+
+© 2026 Star Fusion 7 Catering
+
+</footer>
+
+
+
+
+
+
+
+<script>
+
+
+window.onload=function(){
+
+setTimeout(()=>{
+
+document.getElementById("loader").style.opacity="0";
+
+setTimeout(()=>{
+
+document.getElementById("loader").style.display="none";
+
+},800);
+
+
+},3000);
+
+
+}
+
+
+
+
+function order(plan){
+
+
+let message=
+
+"🍱 Star Fusion 7 Subscription Enquiry%0A%0A"+
+"Interested Plan: "+plan;
+
+
+
+window.open(
+
+"https://wa.me/YOUR_WHATSAPP_NUMBER?text="+message
+
+);
+
+
+}
+
+
+</script>
+
+
+
+
+</body>
+
+</html>
