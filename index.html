@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Star Fusion 7 Catering</title>
 
@@ -13,7 +12,7 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Poppins,Arial;
+font-family:Arial,sans-serif;
 }
 
 body{
@@ -30,83 +29,115 @@ scroll-behavior:smooth;
 /* LOADER */
 
 #loader{
+
 position:fixed;
 inset:0;
-background:#050505;
+background:radial-gradient(circle,#222,#000);
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
 z-index:9999;
-transition:1s;
+animation:out 1s 5s forwards;
+
 }
 
-.logo-intro{
+
+.intro{
+
 text-align:center;
+padding:20px;
+animation:zoom 2s;
+
 }
 
-.logo-intro h1{
-font-size:60px;
+
+.star{
+
+font-size:80px;
+animation:float 2s infinite;
+
+}
+
+
+.intro h1{
+
 color:#ffb703;
-animation:glow 2s infinite alternate;
+font-size:45px;
+letter-spacing:3px;
+text-shadow:0 0 30px #ffb703;
+
 }
 
-.logo-intro h2{
-margin:20px;
-animation:fade 3s;
+
+.intro h2{
+
+margin:20px 0;
+
 }
 
-.logo-intro p{
+
+.intro p{
+
 color:#ccc;
+
 }
 
-.line{
-width:250px;
-height:4px;
-background:#ffb703;
+
+.loading{
+
+height:5px;
+width:260px;
+background:#333;
 margin:30px auto;
-animation:load 3s;
+border-radius:20px;
+overflow:hidden;
+
 }
 
 
-@keyframes glow{
-from{text-shadow:0 0 10px #ffb703}
-to{text-shadow:0 0 40px #ffb703}
+.loading span{
+
+display:block;
+height:100%;
+background:#ffb703;
+width:0;
+animation:load 5s;
+
 }
+
+
 
 @keyframes load{
-from{width:0}
+
+to{width:100%}
+
 }
 
-@keyframes fade{
-from{opacity:0}
+@keyframes zoom{
+
+from{
+opacity:0;
+transform:scale(.5);
+}
+
+}
+
+@keyframes float{
+
+50%{
+transform:translateY(-20px);
+}
+
 }
 
 
+@keyframes out{
 
-/* PARTICLES */
-
-.particle{
-position:fixed;
-width:7px;
-height:7px;
-background:#ffb703;
-border-radius:50%;
-bottom:-20px;
-animation:up 10s infinite;
-opacity:.7;
-}
-
-.particle:nth-child(1){left:10%}
-.particle:nth-child(2){left:30%;animation-delay:2s}
-.particle:nth-child(3){left:60%;animation-delay:4s}
-.particle:nth-child(4){left:80%;animation-delay:6s}
-
-
-@keyframes up{
 to{
-bottom:100%;
-transform:translateX(100px);
+opacity:0;
+visibility:hidden;
 }
+
 }
 
 
@@ -114,43 +145,83 @@ transform:translateX(100px);
 /* NAV */
 
 nav{
+
 position:fixed;
 top:0;
 width:100%;
-padding:20px 8%;
+padding:18px 7%;
+background:#000d;
+backdrop-filter:blur(15px);
 display:flex;
 justify-content:space-between;
-background:#000c;
-backdrop-filter:blur(10px);
+align-items:center;
 z-index:100;
+
 }
+
 
 .logo{
-font-size:28px;
-color:#ffb703;
+
+font-size:25px;
 font-weight:bold;
+color:#ffb703;
+
 }
 
-nav a{
+
+.links{
+
+display:flex;
+gap:20px;
+
+}
+
+
+.links a{
+
 color:white;
 text-decoration:none;
-margin-left:15px;
+
+}
+
+
+.btn{
+
+display:inline-block;
+background:#ffb703;
+color:black;
+padding:14px 30px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+margin:5px;
+
+}
+
+
+.menu{
+
+display:none;
+font-size:30px;
+color:#ffb703;
+
 }
 
 
 
 /* HERO */
 
+
 .hero{
 
 height:100vh;
 display:flex;
 align-items:center;
-justify-content:space-between;
+justify-content:space-around;
 padding:0 8%;
 
 background:
-linear-gradient(#0008,#000d),
+linear-gradient(#0009,#000),
 url("https://images.unsplash.com/photo-1547592180-85f173990554")
 center/cover;
 
@@ -158,67 +229,38 @@ center/cover;
 
 
 .hero h1{
+
 font-size:55px;
-max-width:700px;
-animation:left 1.5s;
+
 }
 
 
 .hero span,h2{
+
 color:#ffb703;
+
 }
 
 
 .hero p{
-margin:20px 0;
+
 font-size:20px;
+margin:20px 0;
+
 }
 
 
 .food{
 
-font-size:130px;
+font-size:120px;
 animation:float 3s infinite;
 
 }
 
 
-@keyframes float{
 
-50%{
-transform:translateY(-30px);
-}
+/* SECTION */
 
-}
-
-
-@keyframes left{
-
-from{
-opacity:0;
-transform:translateX(-80px);
-}
-
-}
-
-
-
-/* BUTTON */
-
-.btn{
-
-background:#ffb703;
-color:black;
-padding:15px 35px;
-border-radius:50px;
-text-decoration:none;
-font-weight:bold;
-
-}
-
-
-
-/* SECTIONS */
 
 section{
 
@@ -230,67 +272,10 @@ text-align:center;
 
 h2{
 
-font-size:40px;
-margin-bottom:30px;
+font-size:38px;
+margin-bottom:25px;
 
 }
-
-
-
-/* REVEAL */
-
-
-.reveal{
-
-opacity:0;
-transform:translateY(60px);
-transition:1s;
-
-}
-
-
-.show{
-
-opacity:1;
-transform:none;
-
-}
-
-
-
-/* COUNTER */
-
-
-.stats{
-
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-
-}
-
-
-.stat{
-
-background:#151515;
-padding:30px;
-border-radius:20px;
-width:220px;
-
-}
-
-
-.number{
-
-font-size:45px;
-color:#ffb703;
-
-}
-
-
-
-/* CARDS */
 
 
 .cards{
@@ -307,17 +292,17 @@ flex-wrap:wrap;
 
 background:#151515;
 padding:30px;
-width:260px;
 border-radius:20px;
-transition:.5s;
+width:260px;
+transition:.4s;
 
 }
 
 
 .card:hover{
 
-transform:translateY(-15px);
-border:1px solid #ffb703;
+transform:translateY(-10px);
+box-shadow:0 0 20px #ffb703;
 
 }
 
@@ -328,88 +313,6 @@ color:#ffb703;
 
 }
 
-
-
-/* MENU */
-
-
-.menu-card{
-
-width:240px;
-height:180px;
-perspective:1000px;
-display:inline-block;
-margin:15px;
-
-}
-
-
-.inner{
-
-height:100%;
-transition:.8s;
-transform-style:preserve-3d;
-position:relative;
-
-}
-
-
-.menu-card:hover .inner{
-
-transform:rotateY(180deg);
-
-}
-
-
-.front,.back{
-
-position:absolute;
-height:100%;
-width:100%;
-background:#151515;
-border-radius:20px;
-display:flex;
-align-items:center;
-justify-content:center;
-backface-visibility:hidden;
-
-}
-
-
-.back{
-
-transform:rotateY(180deg);
-color:#ffb703;
-
-}
-
-
-
-/* DELIVERY */
-
-.delivery{
-
-font-size:60px;
-animation:drive 5s infinite;
-
-}
-
-
-@keyframes drive{
-
-from{
-transform:translateX(-200px);
-}
-
-to{
-transform:translateX(100vw);
-}
-
-}
-
-
-
-/* GALLERY */
 
 .gallery{
 
@@ -424,22 +327,13 @@ gap:20px;
 
 width:100%;
 border-radius:20px;
-transition:.5s;
 
 }
-
-
-.gallery img:hover{
-
-transform:scale(1.08);
-
-}
-
 
 
 footer{
 
-background:#050505;
+background:#000;
 padding:20px;
 text-align:center;
 
@@ -447,14 +341,52 @@ text-align:center;
 
 
 
+/* MOBILE */
+
+
 @media(max-width:700px){
+
+
+.links{
+
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:#050505;
+display:flex;
+flex-direction:column;
+text-align:center;
+padding:30px;
+transform:translateY(-150%);
+transition:.5s;
+
+}
+
+
+.links.active{
+
+transform:translateY(0);
+
+}
+
+
+.menu{
+
+display:block;
+
+}
+
 
 .hero{
 
+height:auto;
+padding:140px 25px 60px;
 display:block;
-padding-top:150px;
+text-align:center;
 
 }
+
 
 .hero h1{
 
@@ -462,19 +394,24 @@ font-size:35px;
 
 }
 
+
 .food{
 
-display:none;
+font-size:80px;
+margin-top:30px;
 
 }
 
-nav a{
 
-display:none;
+section{
+
+padding:60px 25px;
 
 }
 
+
 }
+
 
 </style>
 
@@ -486,43 +423,71 @@ display:none;
 
 <div id="loader">
 
-<div class="logo-intro">
+<div class="intro">
 
-<h1>⭐ Star Fusion 7</h1>
+<div class="star">⭐</div>
+
+<h1>STAR FUSION 7</h1>
 
 <h2>Welcome To Our Catering Family</h2>
 
-<p>Fresh Meals • Premium Service • Delivered With Care</p>
+<p>
+Fresh Meals • Premium Service • Delivered With Care
+</p>
 
-<div class="line"></div>
+<p>
+Schools • Colleges • Institutions
+</p>
 
+
+<div class="loading">
+<span></span>
 </div>
 
 </div>
 
-
-<div class="particle"></div>
-<div class="particle"></div>
-<div class="particle"></div>
-<div class="particle"></div>
+</div>
 
 
 
 <nav>
 
 <div class="logo">
-Star Fusion 7
+⭐ Star Fusion 7
 </div>
 
-<div>
 
-<a href="#">Home</a>
-<a href="#menu">Menu</a>
-<a href="#contact">Contact</a>
+<div class="menu" onclick="openMenu()">
+☰
+</div>
+
+
+<div class="links" id="links">
+
+<a href="#">
+Home
+</a>
+
+<a href="menu.html">
+Menu
+</a>
+
+<a href="order.html">
+🍱 Order
+</a>
+
+<a href="plans.html">
+⭐ Plans
+</a>
+
+<a href="#contact">
+Contact
+</a>
 
 </div>
 
 </nav>
+
 
 
 
@@ -533,20 +498,26 @@ Star Fusion 7
 
 <h1>
 Premium Lunch Boxes For
-<span>Schools & Colleges</span>
+<span>
+Schools & Colleges
+</span>
 </h1>
+
 
 <p>
 Healthy • Hygienic • Affordable Meals
 </p>
 
+
 <a class="btn" href="order.html">
-🍱 Pre Order Now
+Pre Order
 </a>
 
+
 <a class="btn" href="plans.html">
-⭐ Subscription Plans
+Plans
 </a>
+
 
 </div>
 
@@ -560,67 +531,50 @@ Healthy • Hygienic • Affordable Meals
 
 
 
-<section class="reveal">
 
-<h2>About Us</h2>
+<section>
+
+<h2>
+About Us
+</h2>
 
 <p>
-Star Fusion 7 Catering provides lunch box services for schools, colleges and institutions.
+Star Fusion 7 provides premium lunch box catering services for schools, colleges and institutions.
 </p>
 
 </section>
 
 
 
-<section class="reveal">
 
-<h2>Our Numbers</h2>
+<section>
 
-<div class="stats">
-
-<div class="stat">
-<div class="number" data-target="500">0</div>
-Meals Served
-</div>
-
-
-<div class="stat">
-<div class="number" data-target="20">0</div>
-Schools
-</div>
-
-
-<div class="stat">
-<div class="number" data-target="100">0</div>
-Quality %
-</div>
-
-
-</div>
-
-</section>
-
-
-
-<section class="reveal">
-
-<h2>Services</h2>
+<h2>
+Our Services
+</h2>
 
 
 <div class="cards">
 
+
 <div class="card">
 
-<h3>🏫 School Catering</h3>
-<p>Daily student meals</p>
+<h3>🏫 Schools</h3>
+
+<p>
+Daily Student Meals
+</p>
 
 </div>
 
 
 <div class="card">
 
-<h3>🎓 College Meals</h3>
-<p>Affordable boxes</p>
+<h3>🎓 Colleges</h3>
+
+<p>
+Affordable Lunch Boxes
+</p>
 
 </div>
 
@@ -628,70 +582,50 @@ Quality %
 <div class="card">
 
 <h3>🏢 Bulk Orders</h3>
-<p>Institution service</p>
+
+<p>
+Institution Catering
+</p>
 
 </div>
+
 
 </div>
 
 </section>
 
-
-
-<section id="menu">
-
-<h2>Weekly Menu</h2>
-
-
-<div class="menu-card">
-
-<div class="inner">
-
-<div class="front">
-Monday
-</div>
-
-<div class="back">
-Chicken Biryani
-</div>
-
-</div>
-
-</div>
-
-
-<div class="menu-card">
-
-<div class="inner">
-
-<div class="front">
-Friday
-</div>
-
-<div class="back">
-Special Box
-</div>
-
-</div>
-
-</div>
-
-
-</section>
-
-
-
-<div class="delivery">
-
-🍱 🚚
-
-</div>
 
 
 
 <section>
 
-<h2>Gallery</h2>
+<h2>
+Weekly Menu
+</h2>
+
+
+<p>
+View our complete weekly menu and special combos.
+</p>
+
+<br>
+
+<a class="btn" href="menu.html">
+🍱 View Weekly Menu
+</a>
+
+
+</section>
+
+
+
+
+<section>
+
+<h2>
+Gallery
+</h2>
+
 
 <div class="gallery">
 
@@ -701,17 +635,26 @@ Special Box
 
 </div>
 
+
 </section>
+
 
 
 
 <section id="contact">
 
-<h2>Contact</h2>
+<h2>
+Contact
+</h2>
 
-<p>📍 New Malakpet, Royal Residency</p>
+<p>
+📍 New Malakpet, Royal Residency
+</p>
 
-<p>📧 Star.Fusion.7@gmail.com</p>
+<p>
+📧 Star.Fusion.7@gmail.com
+</p>
+
 
 </section>
 
@@ -727,59 +670,18 @@ Special Box
 
 <script>
 
+function openMenu(){
+
+document.getElementById("links")
+.classList.toggle("active");
+
+}
 
 setTimeout(()=>{
 
-loader.style.opacity="0";
+document.getElementById("loader").style.display="none";
 
-setTimeout(()=>{
-
-loader.style.display="none";
-
-},1000)
-
-},5000);
-
-
-
-let reveals=document.querySelectorAll(".reveal");
-
-
-window.addEventListener("scroll",()=>{
-
-reveals.forEach(x=>{
-
-if(x.getBoundingClientRect().top<innerHeight-100)
-
-x.classList.add("show");
-
-})
-
-});
-
-
-
-document.querySelectorAll(".number").forEach(x=>{
-
-let n=0;
-let t=x.dataset.target;
-
-
-let timer=setInterval(()=>{
-
-n++;
-
-x.innerHTML=n+"+";
-
-if(n>=t)
-
-clearInterval(timer);
-
-
-},20);
-
-
-});
+},6000);
 
 
 </script>
