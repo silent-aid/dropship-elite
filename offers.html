@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Star Fusion 7 | Special Offers</title>
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+
+body{
+
+background:#080808;
+color:white;
+
+}
+
+
+
+/* LOADER */
+
+
+#loader{
+
+position:fixed;
+inset:0;
+
+background:radial-gradient(circle,#252525,#000);
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+z-index:9999;
+
+animation:hide 1s 5s forwards;
+
+}
+
+
+.intro{
+
+text-align:center;
+
+}
+
+
+.star{
+
+font-size:80px;
+
+animation:float 2s infinite;
+
+}
+
+
+
+.intro h1{
+
+font-size:45px;
+
+color:#ffb703;
+
+text-shadow:0 0 30px #ffb703;
+
+}
+
+
+.intro h2{
+
+margin-top:20px;
+
+}
+
+
+.intro p{
+
+color:#ccc;
+
+margin:15px;
+
+}
+
+
+.loading{
+
+width:260px;
+
+height:5px;
+
+background:#333;
+
+margin:auto;
+
+overflow:hidden;
+
+}
+
+
+
+.loading span{
+
+display:block;
+
+height:100%;
+
+width:0;
+
+background:#ffb703;
+
+animation:load 5s;
+
+}
+
+
+
+@keyframes load{
+
+to{
+width:100%;
+}
+
+}
+
+
+@keyframes float{
+
+50%{
+transform:translateY(-20px);
+}
+
+}
+
+
+@keyframes hide{
+
+to{
+
+opacity:0;
+visibility:hidden;
+
+}
+
+}
+
+
+
+/* HEADER */
+
+
+header{
+
+background:#000;
+
+padding:25px;
+
+text-align:center;
+
+border-bottom:1px solid #333;
+
+}
+
+
+.logo{
+
+font-size:30px;
+
+font-weight:bold;
+
+color:#ffb703;
+
+}
+
+
+
+/* TITLE */
+
+
+.title{
+
+text-align:center;
+
+padding:50px 20px;
+
+}
+
+
+.title h1{
+
+font-size:40px;
+
+color:#ffb703;
+
+}
+
+
+.title p{
+
+color:#bbb;
+
+margin-top:15px;
+
+}
+
+
+
+/* OFFERS */
+
+
+.offers{
+
+padding:20px;
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:25px;
+
+}
+
+
+
+.card{
+
+background:#151515;
+
+padding:30px;
+
+border-radius:25px;
+
+text-align:center;
+
+border:1px solid #333;
+
+transition:.4s;
+
+}
+
+
+
+.card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 0 25px #ffb703;
+
+}
+
+
+
+.card h2{
+
+color:#ffb703;
+
+margin-bottom:15px;
+
+}
+
+
+
+.price{
+
+font-size:35px;
+
+font-weight:bold;
+
+color:white;
+
+margin:15px;
+
+}
+
+
+
+/* BUTTON */
+
+
+.btn{
+
+display:block;
+
+width:85%;
+
+margin:30px auto;
+
+padding:16px;
+
+background:#ffb703;
+
+color:black;
+
+text-align:center;
+
+border-radius:50px;
+
+font-weight:bold;
+
+text-decoration:none;
+
+}
+
+
+
+footer{
+
+text-align:center;
+
+padding:20px;
+
+color:#aaa;
+
+}
+
+
+
+/* MOBILE */
+
+
+@media(max-width:600px){
+
+.title h1{
+
+font-size:30px;
+
+}
+
+.card{
+
+padding:25px;
+
+}
+
+}
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+<div id="loader">
+
+
+<div class="intro">
+
+
+<div class="star">
+⭐
+</div>
+
+
+<h1>
+STAR FUSION 7
+</h1>
+
+
+<h2>
+Loading Special Offers...
+</h2>
+
+
+<p>
+Premium Meals • Special Deals
+</p>
+
+
+<div class="loading">
+
+<span></span>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<header>
+
+
+<div class="logo">
+
+⭐ Star Fusion 7
+
+</div>
+
+
+<p>
+Special Offers
+</p>
+
+
+</header>
+
+
+
+
+
+
+<div class="title">
+
+
+<h1>
+🔥 Special Offers
+</h1>
+
+
+<p>
+Limited time deals for schools, colleges and bulk orders
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="offers">
+
+
+
+<div class="card">
+
+
+<h2>
+🔥 Friday Special
+</h2>
+
+
+<div class="price">
+
+₹150
+
+</div>
+
+
+<p>
+
+Premium Lunch Combo
+
+</p>
+
+
+<p>
+
+🍚 Main Course<br>
+🥤 Drink<br>
+🍮 Dessert
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+🏫 School Offer
+</h2>
+
+
+<div class="price">
+
+10% OFF
+
+</div>
+
+
+<p>
+
+For regular monthly school orders
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+🏢 Bulk Order
+
+</h2>
+
+
+<div class="price">
+
+Special Price
+
+</div>
+
+
+<p>
+
+50+ lunch boxes get customized pricing
+
+</p>
+
+
+</div>
+
+
+
+
+<div class="card">
+
+
+<h2>
+🎓 College Deal
+
+</h2>
+
+
+<div class="price">
+
+Weekly Plans
+
+</div>
+
+
+<p>
+
+Affordable student meal packages
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<a class="btn" href="order.html">
+
+🍱 Order Now
+
+</a>
+
+
+
+<a class="btn" href="index.html">
+
+← Back Home
+
+</a>
+
+
+
+
+
+<footer>
+
+© 2026 Star Fusion 7 Catering
+
+</footer>
+
+
+
+<script>
+
+setTimeout(()=>{
+
+document.getElementById("loader").style.display="none";
+
+},6000);
+
+
+</script>
+
+
+</body>
+
+</html>
