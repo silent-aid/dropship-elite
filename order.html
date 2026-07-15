@@ -1,70 +1,416 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 <title>Star Fusion 7 | Pre Order</title>
 
 
 <style>
 
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+
 body{
 
 background:#080808;
 color:white;
-font-family:Arial;
 
 }
 
 
-.container{
 
-padding:60px 8%;
+/* LOADER */
+
+
+#loader{
+
+position:fixed;
+inset:0;
+
+background:radial-gradient(circle,#252525,#000);
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+z-index:9999;
+
+animation:hide 1s 5s forwards;
+
+}
+
+
+
+.intro{
+
+text-align:center;
+padding:20px;
+
+animation:zoom 2s;
+
+}
+
+
+
+.star{
+
+font-size:80px;
+
+animation:
+float 2s infinite,
+glow 2s infinite alternate;
+
+}
+
+
+
+.intro h1{
+
+font-size:45px;
+
+color:#ffb703;
+
+letter-spacing:4px;
+
+text-shadow:0 0 30px #ffb703;
+
+}
+
+
+
+.intro h2{
+
+margin-top:20px;
+
+}
+
+
+
+.intro p{
+
+color:#ccc;
+
+margin-top:15px;
+
+}
+
+
+
+.loading{
+
+height:5px;
+
+width:260px;
+
+background:#333;
+
+margin:35px auto;
+
+border-radius:20px;
+
+overflow:hidden;
+
+}
+
+
+
+.loading span{
+
+display:block;
+
+height:100%;
+
+width:0;
+
+background:#ffb703;
+
+box-shadow:0 0 20px #ffb703;
+
+animation:load 5s forwards;
+
+}
+
+
+
+@keyframes load{
+
+to{
+width:100%;
+}
+
+}
+
+
+@keyframes glow{
+
+to{
+
+filter:drop-shadow(0 0 35px #ffb703);
+
+}
+
+}
+
+
+@keyframes float{
+
+50%{
+
+transform:translateY(-20px);
+
+}
+
+}
+
+
+@keyframes zoom{
+
+from{
+
+opacity:0;
+transform:scale(.5);
+
+}
+
+}
+
+
+@keyframes hide{
+
+to{
+
+opacity:0;
+visibility:hidden;
+
+}
+
+}
+
+
+
+
+
+/* HEADER */
+
+
+header{
+
+padding:25px;
+
 text-align:center;
 
+background:#000;
+
+border-bottom:1px solid #333;
+
 }
 
 
-h1{
+.logo{
+
+font-size:30px;
+
+font-weight:bold;
 
 color:#ffb703;
 
 }
 
 
+
+header p{
+
+color:#ccc;
+
+margin-top:10px;
+
+}
+
+
+
+
+
+/* FORM */
+
+
+.container{
+
+padding:30px 20px;
+
+}
+
+
+
+h1.title{
+
+text-align:center;
+
+color:#ffb703;
+
+margin-bottom:30px;
+
+}
+
+
+
 form{
 
 max-width:600px;
+
 margin:auto;
+
 background:#151515;
-padding:35px;
-border-radius:20px;
+
+padding:25px;
+
+border-radius:25px;
+
+box-shadow:0 0 30px #000;
 
 }
 
 
-input,select,textarea{
+
+input,
+select,
+textarea{
+
 
 width:100%;
+
 padding:15px;
+
 margin:10px 0;
+
 background:#050505;
+
 color:white;
+
 border:1px solid #444;
-border-radius:10px;
+
+border-radius:12px;
+
+font-size:16px;
 
 }
+
+
+
+textarea{
+
+height:120px;
+
+}
+
+
+
+label{
+
+color:#ffb703;
+
+display:block;
+
+margin-top:15px;
+
+}
+
 
 
 button{
 
 width:100%;
-padding:15px;
+
+padding:16px;
+
+margin-top:15px;
+
 background:#ffb703;
+
 border:none;
+
 border-radius:50px;
-font-weight:bold;
+
 font-size:18px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+}
+
+
+
+
+
+/* INFO */
+
+
+.info{
+
+text-align:center;
+
+padding:30px;
+
+color:#ccc;
+
+}
+
+
+
+footer{
+
+text-align:center;
+
+padding:20px;
+
+color:#888;
+
+}
+
+
+
+/* MOBILE */
+
+
+@media(max-width:600px){
+
+
+.intro h1{
+
+font-size:32px;
+
+}
+
+
+.intro h2{
+
+font-size:22px;
+
+}
+
+
+.star{
+
+font-size:65px;
+
+}
+
+
+form{
+
+padding:20px;
+
+}
+
 
 }
 
@@ -78,33 +424,126 @@ font-size:18px;
 <body>
 
 
-<div class="container">
+
+
+<!-- LOADING -->
+
+
+<div id="loader">
+
+
+<div class="intro">
+
+
+<div class="star">
+
+⭐
+
+</div>
 
 
 <h1>
-🍱 Star Fusion 7 Pre Order
+
+STAR FUSION 7
+
 </h1>
 
 
-<form onsubmit="order();return false;">
+<h2>
+
+Preparing Your Order...
+
+</h2>
 
 
-<input id="name" placeholder="Your Name" required>
+<p>
+
+Fresh Meals • Easy Booking
+
+</p>
+
+
+<div class="loading">
+
+<span></span>
+
+</div>
+
+
+</div>
+
+
+</div>
 
 
 
-<select id="school">
+
+
+<header>
+
+
+<div class="logo">
+
+⭐ Star Fusion 7
+
+</div>
+
+
+<p>
+
+Lunch Box Pre Booking
+
+</p>
+
+
+</header>
+
+
+
+
+
+<div class="container">
+
+
+<h1 class="title">
+
+🍱 Place Your Order
+
+</h1>
+
+
+
+
+<form onsubmit="sendWhatsApp();return false;">
+
+
+
+<label>
+Your Name
+</label>
+
+<input id="name" placeholder="Enter your name" required>
+
+
+
+
+<label>
+School / College
+</label>
+
+
+<select id="institution" required>
 
 <option>
-Select School / College
+Select Institution
 </option>
 
 <option>
-New Malakpet School
+School
 </option>
 
 <option>
-Royal Residency
+College
 </option>
 
 <option>
@@ -115,23 +554,61 @@ Other Institution
 
 
 
-<select id="menu">
+
+<label>
+Institution Name
+</label>
+
+<input id="school" placeholder="School / College Name" required>
 
 
-<option>
+
+
+
+<label>
+Phone Number
+</label>
+
+<input id="phone" placeholder="Phone Number" required>
+
+
+
+
+
+<label>
 Select Menu
+</label>
+
+
+<select id="menu" required>
+
+
+<option>
+Choose Menu
 </option>
 
 <option>
-Monday Chicken Biryani
+Monday - Chicken Biryani
 </option>
 
 <option>
-Tuesday Veg Meal
+Tuesday - Veg Meal
 </option>
 
 <option>
-Friday Special Box
+Wednesday - Chicken Rice
+</option>
+
+<option>
+Thursday - Special Combo
+</option>
+
+<option>
+Friday - Premium Box ₹150
+</option>
+
+<option>
+Saturday - Weekend Special
 </option>
 
 
@@ -140,10 +617,17 @@ Friday Special Box
 
 
 
+
+<label>
+Quantity
+</label>
+
+
 <select id="qty">
 
+
 <option>
-Select Quantity
+5 Lunch Boxes
 </option>
 
 <option>
@@ -162,20 +646,30 @@ Select Quantity
 100+ Bulk Order
 </option>
 
+
 </select>
 
 
 
-<input id="date" type="date">
+
+
+<label>
+Extra Requirements
+</label>
+
+
+<textarea id="msg" placeholder="Any special requirements"></textarea>
 
 
 
-<textarea id="msg" placeholder="Extra requirements"></textarea>
 
 
 <button>
-Confirm Pre Order
+
+📲 Confirm Order
+
 </button>
+
 
 
 </form>
@@ -186,33 +680,79 @@ Confirm Pre Order
 
 
 
+
+<div class="info">
+
+
+<p>
+📍 New Malakpet, Royal Residency
+</p>
+
+
+<p>
+📧 Star.Fusion.7@gmail.com
+</p>
+
+
+</div>
+
+
+
+
+
+<footer>
+
+© 2026 Star Fusion 7 Catering
+
+</footer>
+
+
+
+
+
 <script>
 
 
-function order(){
+setTimeout(()=>{
+
+document.getElementById("loader").style.display="none";
+
+},6000);
+
+
+
+
+function sendWhatsApp(){
 
 
 let text=
 
-"🍱 Star Fusion 7 Order%0A%0"+
-"Name: "+name.value+
-"%0ASchool: "+school.value+
-"%0AMenu: "+menu.value+
-"%0AQuantity: "+qty.value+
-"%0ADate: "+date.value+
-"%0AMessage: "+msg.value;
+"🍱 Star Fusion 7 Order%0A%0A"+
+
+"Name: "+name.value+"%0A"+
+
+"Type: "+institution.value+"%0A"+
+
+"Institution: "+school.value+"%0A"+
+
+"Phone: "+phone.value+"%0A"+
+
+"Menu: "+menu.value+"%0A"+
+
+"Quantity: "+qty.value+"%0A"+
+
+"Message: "+msg.value;
 
 
 
 window.open(
 
-"https://wa.me/YOUR_NUMBER?text="+text
+"https://wa.me/YOURNUMBER?text="+text
 
 );
 
 
 }
-
 
 
 </script>
