@@ -1,62 +1,173 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Star Fusion 7 | Weekly Menu</title>
 
+
 <style>
 
-body{
+*{
 margin:0;
-font-family:Arial;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+
+body{
+
 background:#080808;
 color:white;
+padding-bottom:40px;
+
 }
+
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+
+
+/* HEADER */
+
 
 header{
-padding:25px;
-background:#111;
+
+position:sticky;
+top:0;
+z-index:100;
+
+background:#000d;
+backdrop-filter:blur(15px);
+
+padding:20px;
+
 text-align:center;
+
+border-bottom:1px solid #333;
+
 }
 
-h1,h2{
+
+.logo{
+
+font-size:28px;
+font-weight:bold;
 color:#ffb703;
+
+}
+
+
+header p{
+
+color:#ccc;
+margin-top:8px;
+
 }
 
 
-.container{
 
-padding:60px 8%;
+/* TITLE */
+
+
+.title{
+
+text-align:center;
+padding:50px 20px 30px;
 
 }
+
+
+.title h1{
+
+font-size:38px;
+color:#ffb703;
+
+}
+
+
+.title span{
+
+color:white;
+
+}
+
+
+
+.title p{
+
+margin-top:15px;
+color:#bbb;
+
+}
+
+
+
+/* TABLE */
+
+
+.menu-container{
+
+padding:20px;
+
+}
+
 
 
 table{
 
 width:100%;
 border-collapse:collapse;
+
 background:#151515;
+
 border-radius:20px;
 overflow:hidden;
 
+box-shadow:0 0 25px #000;
+
 }
+
 
 
 th{
 
 background:#ffb703;
 color:black;
-padding:18px;
-font-size:18px;
+
+padding:15px;
+
+font-size:16px;
 
 }
 
 
+
 td{
 
-padding:18px;
+padding:15px 10px;
+
 border-bottom:1px solid #333;
+
 text-align:center;
+
+font-size:15px;
+
+}
+
+
+
+tr{
+
+transition:.3s;
 
 }
 
@@ -69,16 +180,154 @@ background:#222;
 
 
 
+/* SPECIAL OFFER */
+
+
+.offer{
+
+margin:30px 20px;
+
+background:
+linear-gradient(135deg,#ffb703,#d88b00);
+
+color:black;
+
+padding:25px;
+
+border-radius:25px;
+
+text-align:center;
+
+animation:pulse 2s infinite;
+
+}
+
+
+
+.offer h2{
+
+font-size:28px;
+
+}
+
+
+
+.offer p{
+
+margin-top:10px;
+
+font-weight:bold;
+
+}
+
+
+
+
+@keyframes pulse{
+
+50%{
+
+transform:scale(1.03);
+
+}
+
+}
+
+
+
+/* BUTTON */
+
+
 .btn{
 
-display:inline-block;
-margin-top:30px;
-padding:15px 35px;
+display:block;
+
+width:90%;
+
+margin:30px auto;
+
 background:#ffb703;
+
 color:black;
-text-decoration:none;
+
+padding:16px;
+
+text-align:center;
+
 border-radius:50px;
+
+text-decoration:none;
+
 font-weight:bold;
+
+font-size:18px;
+
+transition:.3s;
+
+}
+
+
+
+.btn:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 0 20px #ffb703;
+
+}
+
+
+
+/* FOOTER */
+
+
+footer{
+
+text-align:center;
+
+padding:20px;
+
+color:#aaa;
+
+}
+
+
+
+/* MOBILE */
+
+
+@media(max-width:600px){
+
+
+.title h1{
+
+font-size:30px;
+
+}
+
+
+table{
+
+font-size:13px;
+
+}
+
+
+th{
+
+font-size:13px;
+
+padding:12px 5px;
+
+}
+
+
+td{
+
+padding:14px 5px;
+
+}
+
 
 }
 
@@ -92,27 +341,47 @@ font-weight:bold;
 <body>
 
 
+
 <header>
 
-<h1>
-⭐ Star Fusion 7 Catering
-</h1>
+<div class="logo">
+
+⭐ Star Fusion 7
+
+</div>
+
 
 <p>
-Weekly Lunch Menu
+Weekly Lunch Box Menu
 </p>
+
 
 </header>
 
 
 
-<div class="container">
 
 
-<h2>
-This Week's Menu
-</h2>
+<div class="title">
 
+
+<h1>
+Weekly <span>Menu</span>
+</h1>
+
+
+<p>
+Fresh meals prepared with quality ingredients
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="menu-container">
 
 
 <table>
@@ -125,15 +394,11 @@ Day
 </th>
 
 <th>
-Main Dish
+Main Meal
 </th>
 
 <th>
-Included
-</th>
-
-<th>
-Price
+Extras
 </th>
 
 </tr>
@@ -147,15 +412,11 @@ Monday
 </td>
 
 <td>
-Chicken Biryani
+🍚 Chicken Biryani
 </td>
 
 <td>
 Raita + Salad
-</td>
-
-<td>
-₹120
 </td>
 
 </tr>
@@ -170,15 +431,11 @@ Tuesday
 </td>
 
 <td>
-Veg Meal
+🍛 Veg Special Meal
 </td>
 
 <td>
-Rice + Curry
-</td>
-
-<td>
-₹80
+Curry + Drink
 </td>
 
 </tr>
@@ -193,15 +450,11 @@ Wednesday
 </td>
 
 <td>
-Chicken Rice
+🍗 Chicken Rice
 </td>
 
 <td>
-Drink
-</td>
-
-<td>
-₹100
+Dessert
 </td>
 
 </tr>
@@ -216,15 +469,11 @@ Thursday
 </td>
 
 <td>
-Chicken Curry
+🍱 Special Combo
 </td>
 
 <td>
-Rice + Salad
-</td>
-
-<td>
-₹120
+Salad + Sweet
 </td>
 
 </tr>
@@ -239,15 +488,11 @@ Friday
 </td>
 
 <td>
-Special Friday Box
+⭐ Premium Box
 </td>
 
 <td>
-Dessert Included
-</td>
-
-<td>
-₹150
+Dessert + Drink
 </td>
 
 </tr>
@@ -262,15 +507,11 @@ Saturday
 </td>
 
 <td>
-Premium Box
+🔥 Weekend Special
 </td>
 
 <td>
-Special Menu
-</td>
-
-<td>
-₹150
+Chef Choice
 </td>
 
 </tr>
@@ -279,19 +520,66 @@ Special Menu
 </table>
 
 
+</div>
 
-<center>
 
-<a class="btn" href="pre-order.html">
-Pre Book Now
-</a>
 
-</center>
+
+
+
+<div class="offer">
+
+
+<h2>
+🔥 Friday Special
+</h2>
+
+
+<p>
+Premium Combo Only ₹150
+</p>
+
+
+<p>
+Limited Orders Available
+</p>
 
 
 </div>
 
 
 
+
+
+
+<a class="btn" href="order.html">
+
+🍱 Pre Book Your Lunch
+
+</a>
+
+
+
+
+
+<a class="btn" href="index.html">
+
+← Back To Home
+
+</a>
+
+
+
+
+
+<footer>
+
+© 2026 Star Fusion 7 Catering
+
+</footer>
+
+
+
 </body>
+
 </html>
