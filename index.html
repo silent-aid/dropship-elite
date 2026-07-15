@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>Star Fusion 7 Catering | School & College Lunch Service</title>
-
+<title>Star Fusion 7 Catering</title>
 
 <style>
 
@@ -15,212 +13,203 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
+font-family:Poppins,Arial;
 }
 
+body{
+background:#080808;
+color:white;
+overflow-x:hidden;
+}
 
 html{
 scroll-behavior:smooth;
 }
 
 
-body{
-
-background:#080808;
-color:white;
-
-}
-
-
 /* LOADER */
 
 #loader{
-
 position:fixed;
-height:100vh;
-width:100%;
+inset:0;
 background:#050505;
 display:flex;
 align-items:center;
 justify-content:center;
 z-index:9999;
-transition:.8s;
-
+transition:1s;
 }
 
-
-.loader-box{
-
+.logo-intro{
 text-align:center;
-
 }
 
-
-.loader-box h1{
-
-font-size:50px;
+.logo-intro h1{
+font-size:60px;
 color:#ffb703;
 animation:glow 2s infinite alternate;
-
 }
 
+.logo-intro h2{
+margin:20px;
+animation:fade 3s;
+}
 
-.loading{
+.logo-intro p{
+color:#ccc;
+}
 
+.line{
 width:250px;
-height:5px;
-background:#333;
-margin:30px auto;
-
-}
-
-
-.loading span{
-
-display:block;
-height:100%;
+height:4px;
 background:#ffb703;
-animation:load 3s forwards;
-
+margin:30px auto;
+animation:load 3s;
 }
-
-
-
-@keyframes load{
-
-from{
-width:0;
-}
-
-to{
-width:100%;
-}
-
-}
-
 
 
 @keyframes glow{
-
-from{
-text-shadow:0 0 10px #ffb703;
+from{text-shadow:0 0 10px #ffb703}
+to{text-shadow:0 0 40px #ffb703}
 }
 
+@keyframes load{
+from{width:0}
+}
+
+@keyframes fade{
+from{opacity:0}
+}
+
+
+
+/* PARTICLES */
+
+.particle{
+position:fixed;
+width:7px;
+height:7px;
+background:#ffb703;
+border-radius:50%;
+bottom:-20px;
+animation:up 10s infinite;
+opacity:.7;
+}
+
+.particle:nth-child(1){left:10%}
+.particle:nth-child(2){left:30%;animation-delay:2s}
+.particle:nth-child(3){left:60%;animation-delay:4s}
+.particle:nth-child(4){left:80%;animation-delay:6s}
+
+
+@keyframes up{
 to{
-text-shadow:0 0 40px #ffb703;
+bottom:100%;
+transform:translateX(100px);
+}
 }
 
-}
 
 
-
-/* NAVBAR */
-
+/* NAV */
 
 nav{
-
 position:fixed;
 top:0;
 width:100%;
 padding:20px 8%;
 display:flex;
 justify-content:space-between;
-align-items:center;
-background:rgba(0,0,0,.7);
-backdrop-filter:blur(15px);
-z-index:1000;
-
+background:#000c;
+backdrop-filter:blur(10px);
+z-index:100;
 }
-
-
 
 .logo{
-
 font-size:28px;
-font-weight:bold;
 color:#ffb703;
-
+font-weight:bold;
 }
-
 
 nav a{
-
 color:white;
 text-decoration:none;
-margin-left:25px;
-
+margin-left:15px;
 }
-
-
-nav a:hover{
-
-color:#ffb703;
-
-}
-
 
 
 
 /* HERO */
-
 
 .hero{
 
 height:100vh;
 display:flex;
 align-items:center;
+justify-content:space-between;
 padding:0 8%;
 
-
 background:
-
-linear-gradient(
-rgba(0,0,0,.7),
-rgba(0,0,0,.9)
-),
-
+linear-gradient(#0008,#000d),
 url("https://images.unsplash.com/photo-1547592180-85f173990554")
-
 center/cover;
 
-
 }
-
 
 
 .hero h1{
-
-font-size:60px;
-max-width:750px;
-
+font-size:55px;
+max-width:700px;
+animation:left 1.5s;
 }
 
 
-.hero span{
-
+.hero span,h2{
 color:#ffb703;
-
 }
-
 
 
 .hero p{
-
+margin:20px 0;
 font-size:20px;
-margin:25px 0;
-color:#ddd;
+}
+
+
+.food{
+
+font-size:130px;
+animation:float 3s infinite;
+
+}
+
+
+@keyframes float{
+
+50%{
+transform:translateY(-30px);
+}
+
+}
+
+
+@keyframes left{
+
+from{
+opacity:0;
+transform:translateX(-80px);
+}
 
 }
 
 
 
+/* BUTTON */
 
 .btn{
 
-display:inline-block;
-padding:15px 35px;
 background:#ffb703;
 color:black;
+padding:15px 35px;
 border-radius:50px;
 text-decoration:none;
 font-weight:bold;
@@ -231,111 +220,196 @@ font-weight:bold;
 
 /* SECTIONS */
 
-
 section{
 
-padding:90px 8%;
+padding:80px 8%;
 text-align:center;
 
 }
 
 
-
 h2{
 
 font-size:40px;
-color:#ffb703;
 margin-bottom:30px;
 
 }
 
 
 
-/* ABOUT */
+/* REVEAL */
 
 
-.about p{
+.reveal{
 
-max-width:850px;
-margin:auto;
-color:#ccc;
-font-size:18px;
-line-height:1.7;
+opacity:0;
+transform:translateY(60px);
+transition:1s;
+
+}
+
+
+.show{
+
+opacity:1;
+transform:none;
 
 }
 
 
 
+/* COUNTER */
 
-/* SERVICES */
+
+.stats{
+
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+
+}
+
+
+.stat{
+
+background:#151515;
+padding:30px;
+border-radius:20px;
+width:220px;
+
+}
+
+
+.number{
+
+font-size:45px;
+color:#ffb703;
+
+}
+
+
+
+/* CARDS */
 
 
 .cards{
 
 display:flex;
 justify-content:center;
-gap:25px;
+gap:20px;
 flex-wrap:wrap;
 
 }
 
 
-
 .card{
 
 background:#151515;
-padding:35px;
-width:280px;
+padding:30px;
+width:260px;
 border-radius:20px;
-border:1px solid #333;
+transition:.5s;
 
 }
 
+
+.card:hover{
+
+transform:translateY(-15px);
+border:1px solid #ffb703;
+
+}
 
 
 .card h3{
 
 color:#ffb703;
-margin-bottom:15px;
 
 }
 
 
 
-.card p{
+/* MENU */
 
-color:#ccc;
+
+.menu-card{
+
+width:240px;
+height:180px;
+perspective:1000px;
+display:inline-block;
+margin:15px;
+
+}
+
+
+.inner{
+
+height:100%;
+transition:.8s;
+transform-style:preserve-3d;
+position:relative;
+
+}
+
+
+.menu-card:hover .inner{
+
+transform:rotateY(180deg);
+
+}
+
+
+.front,.back{
+
+position:absolute;
+height:100%;
+width:100%;
+background:#151515;
+border-radius:20px;
+display:flex;
+align-items:center;
+justify-content:center;
+backface-visibility:hidden;
+
+}
+
+
+.back{
+
+transform:rotateY(180deg);
+color:#ffb703;
 
 }
 
 
 
+/* DELIVERY */
 
+.delivery{
 
-/* CTA */
-
-
-.cta{
-
-background:#111;
+font-size:60px;
+animation:drive 5s infinite;
 
 }
 
 
+@keyframes drive{
 
-.cta p{
-
-font-size:20px;
-color:#ddd;
-margin-bottom:30px;
-
+from{
+transform:translateX(-200px);
 }
 
+to{
+transform:translateX(100vw);
+}
+
+}
 
 
 
 /* GALLERY */
-
 
 .gallery{
 
@@ -346,76 +420,53 @@ gap:20px;
 }
 
 
-
 .gallery img{
 
 width:100%;
-height:250px;
-object-fit:cover;
 border-radius:20px;
+transition:.5s;
 
 }
 
 
+.gallery img:hover{
 
-
-/* CONTACT */
-
-
-.contact p{
-
-margin:15px;
-color:#ddd;
+transform:scale(1.08);
 
 }
-
-
-
-
-/* WHATSAPP */
-
-
-.whatsapp{
-
-position:fixed;
-bottom:25px;
-right:25px;
-width:60px;
-height:60px;
-border-radius:50%;
-background:#25D366;
-display:flex;
-align-items:center;
-justify-content:center;
-color:white;
-font-size:30px;
-text-decoration:none;
-
-}
-
 
 
 
 footer{
 
 background:#050505;
-padding:25px;
+padding:20px;
 text-align:center;
-color:#aaa;
 
 }
-
 
 
 
 @media(max-width:700px){
 
-.hero h1{
+.hero{
 
-font-size:38px;
+display:block;
+padding-top:150px;
 
 }
 
+.hero h1{
+
+font-size:35px;
+
+}
+
+.food{
+
+display:none;
+
+}
 
 nav a{
 
@@ -423,217 +474,201 @@ display:none;
 
 }
 
-
 }
-
 
 </style>
 
 </head>
 
 
-
 <body>
-
 
 
 <div id="loader">
 
-<div class="loader-box">
+<div class="logo-intro">
 
-<h1>
-⭐ Star Fusion 7
-</h1>
+<h1>⭐ Star Fusion 7</h1>
 
+<h2>Welcome To Our Catering Family</h2>
 
-<p>
-Catering & Lunch Box Service
-</p>
+<p>Fresh Meals • Premium Service • Delivered With Care</p>
 
-
-<div class="loading">
-<span></span>
-</div>
-
+<div class="line"></div>
 
 </div>
 
 </div>
 
 
+<div class="particle"></div>
+<div class="particle"></div>
+<div class="particle"></div>
+<div class="particle"></div>
 
 
 
 <nav>
 
-
 <div class="logo">
 Star Fusion 7
 </div>
 
-
 <div>
 
-<a href="index.html">
-Home
-</a>
-
-<a href="weekly-menu.html">
-Weekly Menu
-</a>
-
-
-<a href="pre-order.html">
-Pre Order
-</a>
-
-
-<a href="subscription.html">
-Subscription
-</a>
-
-
-<a href="#contact">
-Contact
-</a>
-
+<a href="#">Home</a>
+<a href="#menu">Menu</a>
+<a href="#contact">Contact</a>
 
 </div>
-
 
 </nav>
 
 
 
-
-
-
-
-
-<section class="hero">
+<div class="hero">
 
 
 <div>
 
-
 <h1>
-
-Fresh Lunch Boxes For
-
-<span>
-Schools & Colleges
-</span>
-
+Premium Lunch Boxes For
+<span>Schools & Colleges</span>
 </h1>
 
-
-
 <p>
-
-Healthy meals. Hygienic packing. Reliable daily delivery.
-
+Healthy • Hygienic • Affordable Meals
 </p>
 
-
-
-<a href="pre-order.html" class="btn">
-
-Pre Book Lunch
-
+<a class="btn" href="#">
+Pre Order Now
 </a>
+
+</div>
+
+
+<div class="food">
+🍱
+</div>
 
 
 </div>
 
 
-</section>
 
+<section class="reveal">
 
-
-
-
-
-
-
-<section class="about">
-
-
-<h2>
-About Star Fusion 7
-</h2>
-
-
+<h2>About Us</h2>
 
 <p>
-
-Star Fusion 7 Catering provides professional lunch box solutions for schools, colleges and institutions. We focus on fresh food, quality ingredients and timely delivery.
-
+Star Fusion 7 Catering provides lunch box services for schools, colleges and institutions.
 </p>
-
 
 </section>
 
 
 
+<section class="reveal">
+
+<h2>Our Numbers</h2>
+
+<div class="stats">
+
+<div class="stat">
+<div class="number" data-target="500">0</div>
+Meals Served
+</div>
+
+
+<div class="stat">
+<div class="number" data-target="20">0</div>
+Schools
+</div>
+
+
+<div class="stat">
+<div class="number" data-target="100">0</div>
+Quality %
+</div>
+
+
+</div>
+
+</section>
 
 
 
+<section class="reveal">
 
-
-<section>
-
-
-<h2>
-Our Services
-</h2>
-
+<h2>Services</h2>
 
 
 <div class="cards">
 
-
 <div class="card">
 
-<h3>
-🏫 School Catering
-</h3>
-
-<p>
-Daily lunch solutions for students with fixed weekly menus.
-</p>
+<h3>🏫 School Catering</h3>
+<p>Daily student meals</p>
 
 </div>
 
 
-
 <div class="card">
 
-<h3>
-🎓 College Meals
-</h3>
-
-<p>
-Affordable and hygienic meals for college students.
-</p>
+<h3>🎓 College Meals</h3>
+<p>Affordable boxes</p>
 
 </div>
 
 
-
-
 <div class="card">
 
-<h3>
-🏢 Bulk Catering
-</h3>
+<h3>🏢 Bulk Orders</h3>
+<p>Institution service</p>
 
-<p>
-Large orders for institutions and events.
-</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+<section id="menu">
+
+<h2>Weekly Menu</h2>
+
+
+<div class="menu-card">
+
+<div class="inner">
+
+<div class="front">
+Monday
+</div>
+
+<div class="back">
+Chicken Biryani
+</div>
+
+</div>
 
 </div>
 
 
+<div class="menu-card">
+
+<div class="inner">
+
+<div class="front">
+Friday
+</div>
+
+<div class="back">
+Special Box
+</div>
+
+</div>
 
 </div>
 
@@ -642,115 +677,39 @@ Large orders for institutions and events.
 
 
 
+<div class="delivery">
 
+🍱 🚚
 
-
-
-
-<section class="cta">
-
-
-<h2>
-Weekly Menu & Pre Booking
-</h2>
-
-
-<p>
-
-Check our weekly menu and reserve your lunch boxes in advance.
-
-</p>
-
-
-<a href="weekly-menu.html" class="btn">
-
-View Weekly Menu
-
-</a>
-
-
-&nbsp;
-
-
-<a href="pre-order.html" class="btn">
-
-Place Order
-
-</a>
-
-
-</section>
-
-
-
-
-
+</div>
 
 
 
 <section>
 
-
-<h2>
-Food Gallery
-</h2>
-
+<h2>Gallery</h2>
 
 <div class="gallery">
 
-
 <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c">
-
 
 <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd">
 
-
-<img src="https://images.unsplash.com/photo-1547592180-85f173990554">
-
-
 </div>
 
-
 </section>
 
 
 
+<section id="contact">
 
+<h2>Contact</h2>
 
+<p>📍 New Malakpet, Royal Residency</p>
 
-
-
-<section class="contact" id="contact">
-
-
-<h2>
-Contact Us
-</h2>
-
-
-<p>
-📍 New Malakpet, Royal Residency
-</p>
-
-
-<p>
-📧 Star.Fusion.7@gmail.com
-</p>
-
+<p>📧 Star.Fusion.7@gmail.com</p>
 
 </section>
-
-
-
-
-
-
-
-<a class="whatsapp" href="#">
-☏
-</a>
-
-
 
 
 
@@ -762,39 +721,65 @@ Contact Us
 
 
 
-
-
-
-
 <script>
 
 
-window.onload=function(){
+setTimeout(()=>{
+
+loader.style.opacity="0";
+
+setTimeout(()=>{
+
+loader.style.display="none";
+
+},1000)
+
+},5000);
 
 
-setTimeout(function(){
+
+let reveals=document.querySelectorAll(".reveal");
 
 
-document.getElementById("loader").style.opacity="0";
+window.addEventListener("scroll",()=>{
+
+reveals.forEach(x=>{
+
+if(x.getBoundingClientRect().top<innerHeight-100)
+
+x.classList.add("show");
+
+})
+
+});
 
 
-setTimeout(function(){
 
-document.getElementById("loader").style.display="none";
+document.querySelectorAll(".number").forEach(x=>{
 
-},800);
-
-
-},3000);
+let n=0;
+let t=x.dataset.target;
 
 
-}
+let timer=setInterval(()=>{
+
+n++;
+
+x.innerHTML=n+"+";
+
+if(n>=t)
+
+clearInterval(timer);
+
+
+},20);
+
+
+});
 
 
 </script>
 
 
-
 </body>
-
 </html>
